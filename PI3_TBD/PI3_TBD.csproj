@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7CE1D97F-538A-4A8E-8254-A5D7E810C881}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MVC</RootNamespace>
+    <AssemblyName>PI3_TBD</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\Alternativa.cs" />
+    <Compile Include="Classes\Area.cs" />
+    <Compile Include="Classes\Assunto.cs" />
+    <Compile Include="Classes\Conexao.cs" />
+    <Compile Include="Classes\Evento.cs" />
+    <Compile Include="Classes\Imagem.cs" />
+    <Compile Include="Classes\Login.cs" />
+    <Compile Include="Classes\Professor.cs" />
+    <Compile Include="Classes\Questao.cs" />
+    <Compile Include="Classes\QuestaoEvento.cs" />
+    <Compile Include="Classes\RandomUtil.cs" />
+    <Compile Include="Classes\Sessao.cs" />
+    <Compile Include="Classes\Status.cs" />
+    <Compile Include="Classes\tipoEvento.cs" />
+    <Compile Include="Classes\tipoQuestao.cs" />
+    <Compile Include="SenaQuizDataSet.cs">
+      <DependentUpon>SenaQuizDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SenaQuizDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SenaQuizDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\frmImagem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\frmImagem.designer.cs">
+      <DependentUpon>frmImagem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\frmQuestaoIns.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\frmQuestaoIns.Designer.cs">
+      <DependentUpon>frmQuestaoIns.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\frmAreaIns.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\frmAreaIns.Designer.cs">
+      <DependentUpon>frmAreaIns.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\frmAreaPsq.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\frmAreaPsq.Designer.cs">
+      <DependentUpon>frmAreaPsq.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\frmAssuntoIns.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\frmAssuntoIns.Designer.cs">
+      <DependentUpon>frmAssuntoIns.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\frmAssuntoPsq.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\frmAssuntoPsq.Designer.cs">
+      <DependentUpon>frmAssuntoPsq.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\frmEventoIns.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\frmEventoIns.Designer.cs">
+      <DependentUpon>frmEventoIns.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\frmEventoPsq.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\frmEventoPsq.Designer.cs">
+      <DependentUpon>frmEventoPsq.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\frmInicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\frmInicio.Designer.cs">
+      <DependentUpon>frmInicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Telas\frmProfessorIns.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\frmProfessorIns.Designer.cs">
+      <DependentUpon>frmProfessorIns.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\frmProfessorPsq.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\frmProfessorPsq.Designer.cs">
+      <DependentUpon>frmProfessorPsq.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\frmQuestaoEvento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\frmQuestaoEvento.Designer.cs">
+      <DependentUpon>frmQuestaoEvento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\frmQuestaoPsq.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\frmQuestaoPsq.Designer.cs">
+      <DependentUpon>frmQuestaoPsq.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Telas\frmImagem.resx">
+      <DependentUpon>frmImagem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\frmQuestaoIns.resx">
+      <DependentUpon>frmQuestaoIns.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\frmAreaIns.resx">
+      <DependentUpon>frmAreaIns.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\frmAreaPsq.resx">
+      <DependentUpon>frmAreaPsq.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\frmAssuntoIns.resx">
+      <DependentUpon>frmAssuntoIns.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\frmAssuntoPsq.resx">
+      <DependentUpon>frmAssuntoPsq.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\frmEventoIns.resx">
+      <DependentUpon>frmEventoIns.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\frmEventoPsq.resx">
+      <DependentUpon>frmEventoPsq.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\frmInicio.resx">
+      <DependentUpon>frmInicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Telas\frmProfessorIns.resx">
+      <DependentUpon>frmProfessorIns.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\frmProfessorPsq.resx">
+      <DependentUpon>frmProfessorPsq.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\frmQuestaoEvento.resx">
+      <DependentUpon>frmQuestaoEvento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\frmQuestaoPsq.resx">
+      <DependentUpon>frmQuestaoPsq.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="SenaQuizDataSet.xsc">
+      <DependentUpon>SenaQuizDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SenaQuizDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SenaQuizDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SenaQuizDataSet.xss">
+      <DependentUpon>SenaQuizDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
