@@ -25,7 +25,7 @@ namespace MVC.Classes
             {
                 SqlConnection cn = Conexao.AbrirConexao();
                 SqlCommand cmd = cn.CreateCommand();
-
+                //igor alteração
                 cmd.CommandText = "INSERT INTO area (descricao) values (@descricao)";
                 cmd.Parameters.Add("@descricao", SqlDbType.VarChar, 50).Value = this.descricao;
 
