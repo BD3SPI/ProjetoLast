@@ -172,7 +172,7 @@ namespace MVC.Telas
                 if (MessageBox.Show("Tem certeza que deseja inserir essa pergunta", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes && txtID.Text != "")
                 {
                     questaoevento.Inserir();
-                    MessageBox.Show("Perguntado inserida no evento");
+                    MessageBox.Show("Pergunta vinculada com o evento");
                     questao.PreencherDataGridPerguntasdaQuestao(dataGridView2, evento);
                     dataGridView2.Columns[0].Visible = false;
                     Limpar();
@@ -209,7 +209,7 @@ namespace MVC.Telas
                 {
 
                     questaoevento.Excluir(evento, codpergunta);
-                    MessageBox.Show("Pergunta excluída com sucesso");
+                    MessageBox.Show("Pergunta desvinculada do evento");
                     questao.PreencherDataGridPerguntasdaQuestao(dataGridView2, evento);
                     Limpar();
 
