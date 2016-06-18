@@ -129,7 +129,7 @@ namespace MVC.Telas
                 bit = 1;
             }
 
-            if (cmbTpQuestao.SelectedValue.Equals("A"))
+            if (cmbTpQuestao.SelectedValue.Equals("A") )
             {
                 Alternativa alternativa = new Alternativa();
                 alternativa.contador = contadorAlternativas;
@@ -142,9 +142,10 @@ namespace MVC.Telas
                 alternativa.PreencherDataGridAlternativa(dataGridView1, codQuestao);
                 ckCorreta.Checked = false;
             }
-
-            if (cmbTpQuestao.SelectedValue.Equals("V"))
+            
+            if (cmbTpQuestao.SelectedValue.Equals("V") )
             {
+                
                 ckCorreta.Checked = true;
                 bit = 1;
                 Alternativa alternativa = new Alternativa();
@@ -222,6 +223,7 @@ namespace MVC.Telas
             btnCancelar.Enabled = true;
             txtTexto.Enabled = false;
             btnCancelar.Visible = true;
+            btnConfirmar.Visible = true;
             
         }
 
@@ -263,6 +265,7 @@ namespace MVC.Telas
                 MessageBox.Show("Questão alterada com sucesso");
                 panQuestao.Enabled = false;
                 panAlternativa.Enabled = true;
+                btnConfirmar.Visible = false;
 
                 if (cmbTpQuestao.SelectedValue.Equals("T"))
                 {
