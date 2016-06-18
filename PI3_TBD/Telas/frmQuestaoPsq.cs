@@ -58,14 +58,42 @@ namespace MVC.Telas
             lstAlternativas.ValueMember = "codigo";
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            panAlterar.Enabled = true;
+            btnRemover.Enabled = true;
+            btnCancelar.Enabled = true;
+            panBusca.Enabled = false;
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            if (ckbAddAlter.Checked)
+            {
+                rxtTextoAlternativa.Enabled = false;
+                ckbCorreta.Enabled = false;
+                btnAdicionar.Enabled = false;
+                ckbAddAlter.Checked = false;
+            }
+            else {
+                panAlterar.Enabled = false;
+                btnRemover.Enabled = false;
+                btnCancelar.Enabled = false;
+                panBusca.Enabled = true;
+            }
+            
+        }
+
+        private void ckbAddAlter_CheckedChanged(object sender, EventArgs e)
         {
             if (ckbAddAlter.Checked)
             {
                 rxtTextoAlternativa.Enabled = true;
                 ckbCorreta.Enabled = true;
                 btnAdicionar.Enabled = true;
-            }else{
+            }
+            else
+            {
                 rxtTextoAlternativa.Enabled = false;
                 ckbCorreta.Enabled = false;
                 btnAdicionar.Enabled = false;
