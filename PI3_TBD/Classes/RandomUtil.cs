@@ -15,6 +15,7 @@ namespace MVC.Classes
             path = path.Replace(".", ""); // Remove period.
             return path;
             //Teste commit final
+            // teste
         }
     }
 }
