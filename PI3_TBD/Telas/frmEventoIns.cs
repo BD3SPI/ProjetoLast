@@ -94,6 +94,7 @@ namespace MVC.Telas
         {
             txtIdentificador.Text = identificador;
             txtDescricao.Clear();
+            txtProfessor.Clear();
             cbxTpEvento.Text = "";
         }
     }

@@ -14,6 +14,7 @@ namespace MVC
 {
     public partial class frmImagem : Form
     {
+        bool imagemSelecionada = false;
         public frmImagem()
         {
             InitializeComponent();
@@ -25,7 +26,6 @@ namespace MVC
             Imagem.SelecionarImagem();
             System.IO.MemoryStream stream = new System.IO.MemoryStream(Imagem.imagem);
             picImagem1.Image = Image.FromStream(stream);
-            lblTitulo.Text = Imagem.tituloImagem;
         }
 
         private void btnProcurar_Click(object sender, EventArgs e)
@@ -39,6 +39,7 @@ namespace MVC
             {
                 picImagem2.Image = Image.FromFile(F.FileName.ToString());
                 lblCaminho.Text = F.FileName.ToString();
+                imagemSelecionada = true;
             }
             
         }
@@ -50,17 +51,28 @@ namespace MVC
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            //Imagem i = new Imagem();
-            System.IO.MemoryStream stream = new System.IO.MemoryStream();
-            picImagem2.Image.Save(stream, System.Drawing.Imaging.ImageFormat.Jpeg);
-            Imagem.imagem = stream.ToArray();
-            Imagem.tituloImagem = txtTitulo.Text;
-            Imagem.codImagem = Imagem.Salvar();
 
-            picImagem2.Image = null;
-            txtTitulo.Text = "";
-            lblCaminho.Text = "Caminho";
-            MessageBox.Show("Imagem gravada com cod = " + Imagem.codImagem.ToString());
+            if (!imagemSelecionada) {
+                MessageBox.Show("Por gentileza, selecione uma imagem!");
+            }
+            else if (txtTitulo.Text == "") {
+                MessageBox.Show("Por gentileza, defina um título para a imagem");
+            }
+            else
+            {
+                //Imagem i = new Imagem();
+                System.IO.MemoryStream stream = new System.IO.MemoryStream();
+                picImagem2.Image.Save(stream, System.Drawing.Imaging.ImageFormat.Jpeg);
+                Imagem.imagem = stream.ToArray();
+                Imagem.tituloImagem = txtTitulo.Text;
+                Imagem.codImagem = Imagem.Salvar();
+
+                picImagem2.Image = null;
+                txtTitulo.Text = "";
+                lblCaminho.Text = "Caminho";
+                MessageBox.Show("Imagem gravada com cod = " + Imagem.codImagem.ToString());
+            }
+            
         }
     }
 }

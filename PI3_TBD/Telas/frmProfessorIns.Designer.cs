@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProfessorIns));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.gbTipo = new System.Windows.Forms.GroupBox();
             this.rbP = new System.Windows.Forms.RadioButton();
             this.rbA = new System.Windows.Forms.RadioButton();
@@ -52,7 +51,6 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.gbTipo);
             this.panel1.Controls.Add(this.txtIdSen);
             this.panel1.Controls.Add(this.label4);
@@ -63,22 +61,10 @@
             this.panel1.Controls.Add(this.txtNome);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(6, 6);
-            this.panel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panel1.Margin = new System.Windows.Forms.Padding(6);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(517, 347);
             this.panel1.TabIndex = 0;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(132, 175);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PasswordChar = '*';
-            this.textBox1.Size = new System.Drawing.Size(143, 29);
-            this.textBox1.TabIndex = 27;
-            this.textBox1.Visible = false;
             // 
             // gbTipo
             // 
@@ -87,9 +73,9 @@
             this.gbTipo.Controls.Add(this.rbP);
             this.gbTipo.Controls.Add(this.rbA);
             this.gbTipo.Location = new System.Drawing.Point(287, 138);
-            this.gbTipo.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gbTipo.Margin = new System.Windows.Forms.Padding(6);
             this.gbTipo.Name = "gbTipo";
-            this.gbTipo.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gbTipo.Padding = new System.Windows.Forms.Padding(6);
             this.gbTipo.Size = new System.Drawing.Size(208, 120);
             this.gbTipo.TabIndex = 8;
             this.gbTipo.TabStop = false;
@@ -100,7 +86,7 @@
             this.rbP.AutoSize = true;
             this.rbP.Checked = true;
             this.rbP.Location = new System.Drawing.Point(13, 79);
-            this.rbP.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.rbP.Margin = new System.Windows.Forms.Padding(6);
             this.rbP.Name = "rbP";
             this.rbP.Size = new System.Drawing.Size(88, 28);
             this.rbP.TabIndex = 1;
@@ -112,7 +98,7 @@
             // 
             this.rbA.AutoSize = true;
             this.rbA.Location = new System.Drawing.Point(13, 37);
-            this.rbA.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.rbA.Margin = new System.Windows.Forms.Padding(6);
             this.rbA.Name = "rbA";
             this.rbA.Size = new System.Drawing.Size(144, 28);
             this.rbA.TabIndex = 0;
@@ -125,7 +111,7 @@
             this.txtIdSen.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtIdSen.Location = new System.Drawing.Point(132, 138);
-            this.txtIdSen.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtIdSen.Margin = new System.Windows.Forms.Padding(6);
             this.txtIdSen.Name = "txtIdSen";
             this.txtIdSen.Size = new System.Drawing.Size(143, 29);
             this.txtIdSen.TabIndex = 7;
@@ -145,7 +131,7 @@
             this.txtSenha.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSenha.Location = new System.Drawing.Point(130, 97);
-            this.txtSenha.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtSenha.Margin = new System.Windows.Forms.Padding(6);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(365, 29);
             this.txtSenha.TabIndex = 5;
@@ -165,7 +151,7 @@
             this.txtEmail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtEmail.Location = new System.Drawing.Point(130, 54);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(6);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(365, 29);
             this.txtEmail.TabIndex = 3;
@@ -185,7 +171,7 @@
             this.txtNome.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNome.Location = new System.Drawing.Point(130, 13);
-            this.txtNome.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtNome.Margin = new System.Windows.Forms.Padding(6);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(365, 29);
             this.txtNome.TabIndex = 1;
@@ -208,7 +194,7 @@
             this.btnCadastrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCadastrar.Image")));
             this.btnCadastrar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnCadastrar.Location = new System.Drawing.Point(138, 386);
-            this.btnCadastrar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnCadastrar.Margin = new System.Windows.Forms.Padding(6);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(115, 115);
             this.btnCadastrar.TabIndex = 10;
@@ -225,7 +211,7 @@
             this.btnLimpar.Image = ((System.Drawing.Image)(resources.GetObject("btnLimpar.Image")));
             this.btnLimpar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnLimpar.Location = new System.Drawing.Point(292, 386);
-            this.btnLimpar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnLimpar.Margin = new System.Windows.Forms.Padding(6);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(115, 115);
             this.btnLimpar.TabIndex = 11;
@@ -245,7 +231,7 @@
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmProfessorIns";
@@ -275,6 +261,5 @@
         private System.Windows.Forms.RadioButton rbP;
         private System.Windows.Forms.RadioButton rbA;
         private System.Windows.Forms.Button btnLimpar;
-        private System.Windows.Forms.TextBox textBox1;
     }
 }

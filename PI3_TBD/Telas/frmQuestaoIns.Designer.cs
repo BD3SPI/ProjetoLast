@@ -101,7 +101,7 @@
             // cckImagem
             // 
             this.cckImagem.AutoSize = true;
-            this.cckImagem.Location = new System.Drawing.Point(321, 261);
+            this.cckImagem.Location = new System.Drawing.Point(347, 260);
             this.cckImagem.Name = "cckImagem";
             this.cckImagem.Size = new System.Drawing.Size(97, 28);
             this.cckImagem.TabIndex = 68;
@@ -179,7 +179,7 @@
             // 
             this.ckAtivo.AutoSize = true;
             this.ckAtivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckAtivo.Location = new System.Drawing.Point(99, 268);
+            this.ckAtivo.Location = new System.Drawing.Point(87, 268);
             this.ckAtivo.Name = "ckAtivo";
             this.ckAtivo.Size = new System.Drawing.Size(15, 14);
             this.ckAtivo.TabIndex = 24;
@@ -350,7 +350,7 @@
             this.btnAlterar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAlterar.Location = new System.Drawing.Point(146, 313);
             this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(91, 44);
+            this.btnAlterar.Size = new System.Drawing.Size(102, 44);
             this.btnAlterar.TabIndex = 75;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -362,9 +362,9 @@
             this.btnConfirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirmar.Image = ((System.Drawing.Image)(resources.GetObject("btnConfirmar.Image")));
             this.btnConfirmar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConfirmar.Location = new System.Drawing.Point(35, 313);
+            this.btnConfirmar.Location = new System.Drawing.Point(13, 313);
             this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(105, 44);
+            this.btnConfirmar.Size = new System.Drawing.Size(127, 44);
             this.btnConfirmar.TabIndex = 76;
             this.btnConfirmar.Text = "Confirmar";
             this.btnConfirmar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -377,7 +377,7 @@
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(353, 313);
+            this.btnCancelar.Location = new System.Drawing.Point(375, 313);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(127, 44);
             this.btnCancelar.TabIndex = 74;
@@ -391,7 +391,7 @@
             this.btnInserir.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInserir.Image = ((System.Drawing.Image)(resources.GetObject("btnInserir.Image")));
             this.btnInserir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInserir.Location = new System.Drawing.Point(243, 313);
+            this.btnInserir.Location = new System.Drawing.Point(265, 313);
             this.btnInserir.Name = "btnInserir";
             this.btnInserir.Size = new System.Drawing.Size(104, 44);
             this.btnInserir.TabIndex = 73;
@@ -416,7 +416,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "frmQuestaoIns";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "s";
+            this.Text = "Cadastro de Questões";
             this.panQuestao.ResumeLayout(false);
             this.panQuestao.PerformLayout();
             this.panAlternativa.ResumeLayout(false);
