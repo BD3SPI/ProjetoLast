@@ -93,6 +93,7 @@
             // 
             // cbxProfessor
             // 
+            this.cbxProfessor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxProfessor.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxProfessor.FormattingEnabled = true;
             this.cbxProfessor.Location = new System.Drawing.Point(202, 85);
@@ -182,6 +183,7 @@
             // 
             // cbxTpEvento
             // 
+            this.cbxTpEvento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxTpEvento.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxTpEvento.FormattingEnabled = true;
             this.cbxTpEvento.ItemHeight = 24;
@@ -192,6 +194,7 @@
             // 
             // cbxStatus
             // 
+            this.cbxStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxStatus.FormattingEnabled = true;
             this.cbxStatus.ItemHeight = 24;
@@ -346,7 +349,7 @@
             // novaPesquisaToolStripMenuItem
             // 
             this.novaPesquisaToolStripMenuItem.Name = "novaPesquisaToolStripMenuItem";
-            this.novaPesquisaToolStripMenuItem.Size = new System.Drawing.Size(139, 29);
+            this.novaPesquisaToolStripMenuItem.Size = new System.Drawing.Size(140, 29);
             this.novaPesquisaToolStripMenuItem.Text = "Nova Pesquisa";
             this.novaPesquisaToolStripMenuItem.Click += new System.EventHandler(this.novaPesquisaToolStripMenuItem_Click);
             // 

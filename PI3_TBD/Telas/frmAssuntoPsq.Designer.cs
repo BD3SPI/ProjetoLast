@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAssuntoPsq));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtcodigo = new System.Windows.Forms.TextBox();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
@@ -44,8 +46,6 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.novaPesquisaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.txtcodigo = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -73,6 +73,23 @@
             this.panel1.Size = new System.Drawing.Size(390, 378);
             this.panel1.TabIndex = 2;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(14, 82);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(71, 24);
+            this.label3.TabIndex = 41;
+            this.label3.Text = "Código";
+            // 
+            // txtcodigo
+            // 
+            this.txtcodigo.Location = new System.Drawing.Point(109, 82);
+            this.txtcodigo.Name = "txtcodigo";
+            this.txtcodigo.Size = new System.Drawing.Size(248, 20);
+            this.txtcodigo.TabIndex = 40;
             // 
             // btnExcluir
             // 
@@ -148,6 +165,7 @@
             // 
             // cbxArea
             // 
+            this.cbxArea.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxArea.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxArea.FormattingEnabled = true;
             this.cbxArea.Location = new System.Drawing.Point(109, 44);
@@ -241,23 +259,6 @@
             this.sairToolStripMenuItem.Size = new System.Drawing.Size(53, 29);
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
-            // 
-            // txtcodigo
-            // 
-            this.txtcodigo.Location = new System.Drawing.Point(109, 82);
-            this.txtcodigo.Name = "txtcodigo";
-            this.txtcodigo.Size = new System.Drawing.Size(248, 20);
-            this.txtcodigo.TabIndex = 40;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(14, 82);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(71, 24);
-            this.label3.TabIndex = 41;
-            this.label3.Text = "Código";
             // 
             // frmAssuntoPsq
             // 

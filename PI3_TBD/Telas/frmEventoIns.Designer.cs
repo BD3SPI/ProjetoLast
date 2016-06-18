@@ -75,6 +75,7 @@
             // 
             // cbxTpEvento
             // 
+            this.cbxTpEvento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxTpEvento.FormattingEnabled = true;
             this.cbxTpEvento.Location = new System.Drawing.Point(210, 224);
             this.cbxTpEvento.Margin = new System.Windows.Forms.Padding(6);

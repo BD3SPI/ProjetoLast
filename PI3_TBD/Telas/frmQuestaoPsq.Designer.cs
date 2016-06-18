@@ -30,9 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQuestaoPsq));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cbxProf = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.btnExcluir = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnLimpar = new System.Windows.Forms.Button();
             this.btnBusca = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.txtCodQuestao = new System.Windows.Forms.RichTextBox();
@@ -48,16 +52,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
+            this.lstAlternativas = new System.Windows.Forms.ListBox();
             this.lstQuestao = new System.Windows.Forms.ListBox();
+            this.btnRemover = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.txtAlternativa = new System.Windows.Forms.RichTextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.cbxProf = new System.Windows.Forms.ComboBox();
-            this.btnLimpar = new System.Windows.Forms.Button();
-            this.btnExcluir = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
-            this.lstAlternativas = new System.Windows.Forms.ListBox();
-            this.btnRemover = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -93,6 +93,17 @@
             this.panel1.Size = new System.Drawing.Size(489, 355);
             this.panel1.TabIndex = 9;
             // 
+            // cbxProf
+            // 
+            this.cbxProf.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxProf.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxProf.FormattingEnabled = true;
+            this.cbxProf.Location = new System.Drawing.Point(161, 140);
+            this.cbxProf.Margin = new System.Windows.Forms.Padding(6);
+            this.cbxProf.Name = "cbxProf";
+            this.cbxProf.Size = new System.Drawing.Size(318, 32);
+            this.cbxProf.TabIndex = 84;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -119,6 +130,50 @@
             this.label13.Size = new System.Drawing.Size(232, 24);
             this.label13.TabIndex = 81;
             this.label13.Text = "-------------------------------------";
+            // 
+            // btnExcluir
+            // 
+            this.btnExcluir.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnExcluir.Enabled = false;
+            this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcluir.Image = ((System.Drawing.Image)(resources.GetObject("btnExcluir.Image")));
+            this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExcluir.Location = new System.Drawing.Point(253, 320);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(88, 29);
+            this.btnExcluir.TabIndex = 79;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnExcluir.UseVisualStyleBackColor = false;
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnEditar.Enabled = false;
+            this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
+            this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditar.Location = new System.Drawing.Point(161, 320);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(88, 29);
+            this.btnEditar.TabIndex = 78;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEditar.UseVisualStyleBackColor = false;
+            // 
+            // btnLimpar
+            // 
+            this.btnLimpar.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpar.Image = ((System.Drawing.Image)(resources.GetObject("btnLimpar.Image")));
+            this.btnLimpar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLimpar.Location = new System.Drawing.Point(342, 320);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new System.Drawing.Size(88, 29);
+            this.btnLimpar.TabIndex = 77;
+            this.btnLimpar.Text = "Limpar";
+            this.btnLimpar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLimpar.UseVisualStyleBackColor = false;
             // 
             // btnBusca
             // 
@@ -175,6 +230,7 @@
             // 
             // cbxAssunto
             // 
+            this.cbxAssunto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxAssunto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxAssunto.FormattingEnabled = true;
             this.cbxAssunto.Location = new System.Drawing.Point(161, 104);
@@ -185,6 +241,7 @@
             // 
             // cmbTpQuestao
             // 
+            this.cmbTpQuestao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTpQuestao.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTpQuestao.FormattingEnabled = true;
             this.cmbTpQuestao.Items.AddRange(new object[] {
@@ -220,6 +277,7 @@
             // 
             // cmbNivel
             // 
+            this.cmbNivel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbNivel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbNivel.FormattingEnabled = true;
             this.cmbNivel.ItemHeight = 24;
@@ -288,6 +346,15 @@
             this.label8.TabIndex = 75;
             this.label8.Text = "Alternativas:";
             // 
+            // lstAlternativas
+            // 
+            this.lstAlternativas.FormattingEnabled = true;
+            this.lstAlternativas.ItemHeight = 24;
+            this.lstAlternativas.Location = new System.Drawing.Point(180, 181);
+            this.lstAlternativas.Name = "lstAlternativas";
+            this.lstAlternativas.Size = new System.Drawing.Size(318, 76);
+            this.lstAlternativas.TabIndex = 74;
+            // 
             // lstQuestao
             // 
             this.lstQuestao.FormattingEnabled = true;
@@ -297,6 +364,19 @@
             this.lstQuestao.Size = new System.Drawing.Size(318, 76);
             this.lstQuestao.TabIndex = 73;
             this.lstQuestao.Click += new System.EventHandler(this.lstQuestao_Click);
+            // 
+            // btnRemover
+            // 
+            this.btnRemover.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemover.Image = ((System.Drawing.Image)(resources.GetObject("btnRemover.Image")));
+            this.btnRemover.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRemover.Location = new System.Drawing.Point(365, 305);
+            this.btnRemover.Name = "btnRemover";
+            this.btnRemover.Size = new System.Drawing.Size(133, 44);
+            this.btnRemover.TabIndex = 72;
+            this.btnRemover.Text = "Remover";
+            this.btnRemover.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRemover.UseVisualStyleBackColor = true;
             // 
             // label10
             // 
@@ -326,82 +406,6 @@
             this.label12.Size = new System.Drawing.Size(63, 24);
             this.label12.TabIndex = 68;
             this.label12.Text = "Texto:";
-            // 
-            // cbxProf
-            // 
-            this.cbxProf.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxProf.FormattingEnabled = true;
-            this.cbxProf.Location = new System.Drawing.Point(161, 140);
-            this.cbxProf.Margin = new System.Windows.Forms.Padding(6);
-            this.cbxProf.Name = "cbxProf";
-            this.cbxProf.Size = new System.Drawing.Size(318, 32);
-            this.cbxProf.TabIndex = 84;
-            // 
-            // btnLimpar
-            // 
-            this.btnLimpar.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpar.Image = ((System.Drawing.Image)(resources.GetObject("btnLimpar.Image")));
-            this.btnLimpar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLimpar.Location = new System.Drawing.Point(342, 320);
-            this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(88, 29);
-            this.btnLimpar.TabIndex = 77;
-            this.btnLimpar.Text = "Limpar";
-            this.btnLimpar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLimpar.UseVisualStyleBackColor = false;
-            // 
-            // btnExcluir
-            // 
-            this.btnExcluir.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnExcluir.Enabled = false;
-            this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExcluir.Image = ((System.Drawing.Image)(resources.GetObject("btnExcluir.Image")));
-            this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcluir.Location = new System.Drawing.Point(253, 320);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(88, 29);
-            this.btnExcluir.TabIndex = 79;
-            this.btnExcluir.Text = "Excluir";
-            this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnExcluir.UseVisualStyleBackColor = false;
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnEditar.Enabled = false;
-            this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
-            this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditar.Location = new System.Drawing.Point(161, 320);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(88, 29);
-            this.btnEditar.TabIndex = 78;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEditar.UseVisualStyleBackColor = false;
-            // 
-            // lstAlternativas
-            // 
-            this.lstAlternativas.FormattingEnabled = true;
-            this.lstAlternativas.ItemHeight = 24;
-            this.lstAlternativas.Location = new System.Drawing.Point(180, 181);
-            this.lstAlternativas.Name = "lstAlternativas";
-            this.lstAlternativas.Size = new System.Drawing.Size(318, 76);
-            this.lstAlternativas.TabIndex = 74;
-            // 
-            // btnRemover
-            // 
-            this.btnRemover.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemover.Image = ((System.Drawing.Image)(resources.GetObject("btnRemover.Image")));
-            this.btnRemover.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRemover.Location = new System.Drawing.Point(365, 305);
-            this.btnRemover.Name = "btnRemover";
-            this.btnRemover.Size = new System.Drawing.Size(133, 44);
-            this.btnRemover.TabIndex = 72;
-            this.btnRemover.Text = "Remover";
-            this.btnRemover.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRemover.UseVisualStyleBackColor = true;
             // 
             // frmQuestaoPsq
             // 

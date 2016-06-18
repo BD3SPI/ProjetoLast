@@ -55,6 +55,7 @@
             // 
             // cbxArea
             // 
+            this.cbxArea.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxArea.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxArea.FormattingEnabled = true;
             this.cbxArea.Location = new System.Drawing.Point(121, 38);

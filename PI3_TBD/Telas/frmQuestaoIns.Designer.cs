@@ -131,6 +131,7 @@
             // 
             // cbxAssunto
             // 
+            this.cbxAssunto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxAssunto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxAssunto.FormattingEnabled = true;
             this.cbxAssunto.Location = new System.Drawing.Point(126, 104);
@@ -150,6 +151,7 @@
             // 
             // cmbTpQuestao
             // 
+            this.cmbTpQuestao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTpQuestao.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTpQuestao.FormattingEnabled = true;
             this.cmbTpQuestao.Items.AddRange(new object[] {
@@ -185,6 +187,7 @@
             // 
             // cmbNivel
             // 
+            this.cmbNivel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbNivel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbNivel.FormattingEnabled = true;
             this.cmbNivel.ItemHeight = 24;

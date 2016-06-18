@@ -14,7 +14,7 @@ namespace MVC.Classes
     class Conexao
     {
         public static SqlConnection con;
-
+        //
         //Criação das funções que realizarão a conexão com o Banco
         public static SqlConnection AbrirConexao()
         {
