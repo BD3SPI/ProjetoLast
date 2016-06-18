@@ -57,5 +57,19 @@ namespace MVC.Telas
             lstAlternativas.DisplayMember = "texto";
             lstAlternativas.ValueMember = "codigo";
         }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckbAddAlter.Checked)
+            {
+                rxtTextoAlternativa.Enabled = true;
+                ckbCorreta.Enabled = true;
+                btnAdicionar.Enabled = true;
+            }else{
+                rxtTextoAlternativa.Enabled = false;
+                ckbCorreta.Enabled = false;
+                btnAdicionar.Enabled = false;
+            }
+        }
     }
 }
