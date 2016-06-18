@@ -14,7 +14,7 @@ namespace MVC.Classes
         public static int codImagem { get; set; }
         public static string tituloImagem { get; set; }
         public static byte[] imagem { get; set; }
-
+        //Caio Bichona
         public static void SelecionarImagem()
         {
             //SqlConnection cn = new SqlConnection();
