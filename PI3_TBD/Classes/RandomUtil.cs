@@ -14,6 +14,7 @@ namespace MVC.Classes
             string path = Path.GetRandomFileName();
             path = path.Replace(".", ""); // Remove period.
             return path;
+            //Teste commit final
         }
     }
 }
