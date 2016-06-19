@@ -39,7 +39,6 @@ namespace MVC.Telas
         {
             if (txtArea != null)
             {
-
                 lstArea.DataSource = Area.ListaArea(txtArea.Text.ToString());
                 btnEditar.Enabled = true;
                 btnExcluir.Enabled = true;

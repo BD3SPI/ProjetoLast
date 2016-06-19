@@ -14,7 +14,7 @@ namespace MVC
 {
     public partial class frmImagem : Form
     {
-        bool imagemSelecionada = false;
+        public static bool imagemSelecionada = false;
         public frmImagem()
         {
             InitializeComponent();

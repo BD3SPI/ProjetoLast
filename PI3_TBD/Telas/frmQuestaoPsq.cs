@@ -28,6 +28,7 @@ namespace MVC.Telas
             cmbTpQuestao.DataSource = tipoQuestao.SelecionarTipo();
             cmbTpQuestao.DisplayMember = "descricao";
             cmbTpQuestao.ValueMember = "codTipoQuestao";
+
         }
 
         private void btnBusca_Click(object sender, EventArgs e)
@@ -115,9 +116,17 @@ namespace MVC.Telas
             lstQuestao.ClearSelected();
         }
 
-        private void lstAlternativas_SelectedIndexChanged(object sender, EventArgs e)
+        private void llbImagem_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            frmImagem frimagem = new frmImagem();
+            frimagem.ShowDialog();
 
+            if (frmImagem.imagemSelecionada) { 
+               //alteração de questão com a nova imagem selecionada
+                
+            }else{
+               //alteração de questão sem nenhuma nova imagem selecionada
+            }
         }
     }
 }

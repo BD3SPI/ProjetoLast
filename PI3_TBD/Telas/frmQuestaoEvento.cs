@@ -32,13 +32,7 @@ namespace MVC.Telas
             questao.PreencherDataGridQuestao(dataGridView1);
             dataGridView1.Columns[0].Visible = false;
 
-
-        }
-
-
-        private void txtQuestao_TextChanged(object sender, System.EventArgs e)
-        {
-
+            ckbCarrega.Checked = false;
         }
 
         // evento CELL CLIK - Joga a pergunta seleciona no grid para o TextBox
@@ -77,33 +71,30 @@ namespace MVC.Telas
             txtQuestao.Clear();
             cbxAssunto.SelectedItem = "";
         }
+        
         // Ckeck Box para o usuario selecionar se quer que exibi as perguntas ou não.
-
         private void ckbCarrega_CheckedChanged(object sender, EventArgs e)
         {
-
-            try
-            {
-                Questao questao = new Questao();
-                string evento = cbxEvento.SelectedValue.ToString();
-                //  Carregar as perguntas do GridView
-                if (ckbCarrega.Checked == true)
-                {
-                    questao.PreencherDataGridPerguntasdaQuestao(dataGridView2, evento);
-                    dataGridView2.Columns[0].Visible = false;
-                    dataGridView2.Columns[2].Visible = false;
-
+            if (ckbCarrega.Checked == true) { 
+                if(cbxEvento.SelectedItem != null){
+                    Questao questao = new Questao();
+                    string evento = cbxEvento.SelectedValue.ToString();
+                    //  Carregar as perguntas do GridView
+                        questao.PreencherDataGridPerguntasdaQuestao(dataGridView2, evento);
+                        dataGridView2.Columns[0].Visible = false;
+                        dataGridView2.Columns[2].Visible = false;
                 }
-                // limpando o grid - Perguntas
                 else
                 {
-                    this.dataGridView2.DataSource = null;
+                    MessageBox.Show("Selecione o evento");
+                    ckbCarrega.Checked = false;
                 }
             }
-            catch (Exception)
-            {
-                MessageBox.Show("Selecione o evento");
-            }
+            else
+                {
+                    // limpando o grid - Perguntas
+                    this.dataGridView2.DataSource = null;
+                }
         }
 
         private void cbxAssunto_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -240,8 +231,7 @@ namespace MVC.Telas
 
         private void cbxEvento_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try
-            {
+            if (cbxEvento.SelectedValue != null) { 
                 Questao questao = new Questao();
                 string evento = cbxEvento.SelectedValue.ToString();
                 //  Carregar as perguntas do GridView
@@ -258,11 +248,9 @@ namespace MVC.Telas
                     this.dataGridView2.DataSource = null;
                 }
             }
-            catch (Exception)
-            {
-                MessageBox.Show("Selecione o evento");
-            }
         }
+            
+        
     }
   }
  
