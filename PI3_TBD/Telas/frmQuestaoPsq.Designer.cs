@@ -59,9 +59,11 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.ckbAddAlter = new System.Windows.Forms.CheckBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.dgvAlternativa = new System.Windows.Forms.DataGridView();
             this.panBusca.SuspendLayout();
             this.panAlterar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAlternativa)).BeginInit();
             this.SuspendLayout();
             // 
             // panBusca
@@ -421,7 +423,6 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.Location = new System.Drawing.Point(513, 475);
             this.button2.Name = "button2";
@@ -430,6 +431,14 @@
             this.button2.Text = "Finalizar";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = true;
+            // 
+            // dgvAlternativa
+            // 
+            this.dgvAlternativa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAlternativa.Location = new System.Drawing.Point(146, 253);
+            this.dgvAlternativa.Name = "dgvAlternativa";
+            this.dgvAlternativa.Size = new System.Drawing.Size(375, 78);
+            this.dgvAlternativa.TabIndex = 86;
             // 
             // frmQuestaoPsq
             // 
@@ -498,6 +507,7 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.CheckBox ckbAddAlter;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DataGridView dgvAlternativa;
 
     }
 }
