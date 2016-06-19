@@ -28,6 +28,7 @@ namespace MVC.Telas
             cmbTpQuestao.DataSource = tipoQuestao.SelecionarTipo();
             cmbTpQuestao.DisplayMember = "descricao";
             cmbTpQuestao.ValueMember = "codTipoQuestao";
+
         }
 
         private void btnBusca_Click(object sender, EventArgs e)
@@ -40,6 +41,15 @@ namespace MVC.Telas
             lstQuestao.DataSource = Q.listarQuestao();
             lstQuestao.DisplayMember = "textoQuestao";
             lstQuestao.ValueMember = "codQuestao";
+            if (Q.codImagem != null) { 
+                //Atribuir imagem ao picturebox do form.
+            }
+            else
+            {
+                lblImagem.Visible = true;
+                llbImagem.Visible = true;
+                pictureBox1.Visible = false;
+            }
         }
 
         private void lstQuestao_Click(object sender, EventArgs e)
@@ -49,6 +59,7 @@ namespace MVC.Telas
             lstAlternativas.DataSource = a.listarAlternativa(txtAlternativa.Text);
             lstAlternativas.DisplayMember = "texto";
             lstAlternativas.ValueMember = "codigo";
+            
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -104,6 +115,19 @@ namespace MVC.Telas
             cbxProf.SelectedItem = null;
             cmbTpQuestao.SelectedItem = null;
             lstQuestao.ClearSelected();
+        }
+
+        private void llbImagem_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmImagem frimagem = new frmImagem();
+            frimagem.ShowDialog();
+
+            if (frmImagem.imagemSelecionada) { 
+               //alteração de questão com a nova imagem selecionada
+                
+            }else{
+               //alteração de questão sem nenhuma nova imagem selecionada
+            }
         }
     }
 }

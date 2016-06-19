@@ -59,6 +59,7 @@
             this.btnRemover = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.ckbAddAlter = new System.Windows.Forms.CheckBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.panBusca.SuspendLayout();
             this.panAlterar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -271,6 +272,8 @@
             this.llbImagem.TabIndex = 85;
             this.llbImagem.TabStop = true;
             this.llbImagem.Text = "Clique aqui para cadastrar uma imagem.";
+            this.llbImagem.Visible = false;
+            this.llbImagem.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbImagem_LinkClicked);
             // 
             // lblImagem
             // 
@@ -280,6 +283,7 @@
             this.lblImagem.Size = new System.Drawing.Size(253, 24);
             this.lblImagem.TabIndex = 84;
             this.lblImagem.Text = "Não há imagens cadastradas";
+            this.lblImagem.Visible = false;
             // 
             // label5
             // 
@@ -376,7 +380,7 @@
             this.btnAdicionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdicionar.Image = ((System.Drawing.Image)(resources.GetObject("btnAdicionar.Image")));
             this.btnAdicionar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdicionar.Location = new System.Drawing.Point(678, 475);
+            this.btnAdicionar.Location = new System.Drawing.Point(652, 475);
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(133, 44);
             this.btnAdicionar.TabIndex = 82;
@@ -424,12 +428,26 @@
             this.ckbAddAlter.UseVisualStyleBackColor = true;
             this.ckbAddAlter.CheckedChanged += new System.EventHandler(this.ckbAddAlter_CheckedChanged);
             // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(513, 475);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(133, 44);
+            this.button2.TabIndex = 90;
+            this.button2.Text = "Finalizar";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // frmQuestaoPsq
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1095, 536);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.ckbAddAlter);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.ckbCorreta);
@@ -489,6 +507,7 @@
         private System.Windows.Forms.Button btnRemover;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.CheckBox ckbAddAlter;
+        private System.Windows.Forms.Button button2;
 
     }
 }

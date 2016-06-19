@@ -20,6 +20,7 @@ namespace MVC.Classes
         public string dificuldade { get; set; }
         public tipoQuestao tipoQuestao { get; set; }
         public Alternativa alternativa { get; set; }
+        public int codImagem { get; set; }
 
         public override string ToString()
         {
