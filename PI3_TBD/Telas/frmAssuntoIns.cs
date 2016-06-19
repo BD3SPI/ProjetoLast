@@ -35,6 +35,7 @@ namespace MVC.Telas
                     string area = cbxArea.SelectedValue.ToString();
                     assunto.area.codarea = area.ToString();
                     assunto.Inserir();
+                    txtDescricao.Clear();
                     assunto.PreencherDataGridAssunto(dgvAssunto);
                 }
                 else

@@ -181,11 +181,11 @@ namespace MVC.Classes
 
         }
 
-        public static List<Assunto> listadescricaoAssunto(string descricao)
+        public static List<Assunto> listadescricaoAssunto(string assunto)
         {
             try
             {
-                string sql = "select descricao from assunto where descricao like '%" + descricao + "%'";
+                string sql = "select descricao from assunto where codArea = " + assunto;
                 SqlConnection con = Conexao.AbrirConexao();
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandText = sql;

@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAssuntoPsq));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lstAssunto = new System.Windows.Forms.ListBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtcodigo = new System.Windows.Forms.TextBox();
             this.btnExcluir = new System.Windows.Forms.Button();
@@ -40,11 +41,9 @@
             this.cbxArea = new System.Windows.Forms.ComboBox();
             this.txtAssunto = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.lstAssunto = new System.Windows.Forms.ListBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.novaPesquisaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -55,6 +54,7 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.lstAssunto);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.txtcodigo);
             this.panel1.Controls.Add(this.btnExcluir);
@@ -65,7 +65,6 @@
             this.panel1.Controls.Add(this.cbxArea);
             this.panel1.Controls.Add(this.txtAssunto);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.lstAssunto);
             this.panel1.Controls.Add(this.btnCancelar);
             this.panel1.Controls.Add(this.btnConfirmar);
             this.panel1.Location = new System.Drawing.Point(12, 48);
@@ -74,11 +73,22 @@
             this.panel1.TabIndex = 2;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // lstAssunto
+            // 
+            this.lstAssunto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstAssunto.FormattingEnabled = true;
+            this.lstAssunto.ItemHeight = 24;
+            this.lstAssunto.Location = new System.Drawing.Point(18, 119);
+            this.lstAssunto.Name = "lstAssunto";
+            this.lstAssunto.Size = new System.Drawing.Size(355, 172);
+            this.lstAssunto.TabIndex = 27;
+            this.lstAssunto.SelectedIndexChanged += new System.EventHandler(this.lstAssunto_SelectedIndexChanged);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(14, 82);
+            this.label3.Location = new System.Drawing.Point(14, 85);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(71, 24);
             this.label3.TabIndex = 41;
@@ -86,9 +96,11 @@
             // 
             // txtcodigo
             // 
+            this.txtcodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtcodigo.Location = new System.Drawing.Point(109, 82);
             this.txtcodigo.Name = "txtcodigo";
-            this.txtcodigo.Size = new System.Drawing.Size(248, 20);
+            this.txtcodigo.ReadOnly = true;
+            this.txtcodigo.Size = new System.Drawing.Size(248, 29);
             this.txtcodigo.TabIndex = 40;
             // 
             // btnExcluir
@@ -157,7 +169,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(8, 47);
+            this.label2.Location = new System.Drawing.Point(14, 47);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 24);
             this.label2.TabIndex = 31;
@@ -172,12 +184,14 @@
             this.cbxArea.Name = "cbxArea";
             this.cbxArea.Size = new System.Drawing.Size(257, 32);
             this.cbxArea.TabIndex = 30;
+            this.cbxArea.SelectedIndexChanged += new System.EventHandler(this.cbxArea_SelectedIndexChanged);
             // 
             // txtAssunto
             // 
             this.txtAssunto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAssunto.Location = new System.Drawing.Point(109, 9);
             this.txtAssunto.Name = "txtAssunto";
+            this.txtAssunto.ReadOnly = true;
             this.txtAssunto.Size = new System.Drawing.Size(257, 29);
             this.txtAssunto.TabIndex = 29;
             // 
@@ -185,22 +199,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(8, 12);
+            this.label1.Location = new System.Drawing.Point(14, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 24);
             this.label1.TabIndex = 28;
             this.label1.Text = "Assunto: ";
-            // 
-            // lstAssunto
-            // 
-            this.lstAssunto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lstAssunto.FormattingEnabled = true;
-            this.lstAssunto.ItemHeight = 24;
-            this.lstAssunto.Location = new System.Drawing.Point(18, 119);
-            this.lstAssunto.Name = "lstAssunto";
-            this.lstAssunto.Size = new System.Drawing.Size(355, 172);
-            this.lstAssunto.TabIndex = 27;
-            this.lstAssunto.SelectedIndexChanged += new System.EventHandler(this.lstAssunto_SelectedIndexChanged);
             // 
             // btnCancelar
             // 
@@ -239,19 +242,12 @@
             this.menuStrip1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 13F);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.novaPesquisaToolStripMenuItem,
             this.sairToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(414, 33);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // novaPesquisaToolStripMenuItem
-            // 
-            this.novaPesquisaToolStripMenuItem.Name = "novaPesquisaToolStripMenuItem";
-            this.novaPesquisaToolStripMenuItem.Size = new System.Drawing.Size(140, 29);
-            this.novaPesquisaToolStripMenuItem.Text = "Nova Pesquisa";
             // 
             // sairToolStripMenuItem
             // 
@@ -296,7 +292,6 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnConfirmar;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem novaPesquisaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnEditar;

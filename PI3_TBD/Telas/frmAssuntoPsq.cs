@@ -30,12 +30,17 @@ namespace MVC.Telas
 
         private void btnBusca_Click(object sender, EventArgs e)
         {
-            if (txtAssunto != null)
+            if (cbxArea.SelectedValue != null)
             {
 
                 Assunto a = new Assunto();
                 //Professor p = new Professor();
-                lstAssunto.DataSource = Assunto.listadescricaoAssunto(txtAssunto.Text.ToString());
+                lstAssunto.DataSource = Assunto.listadescricaoAssunto(cbxArea.SelectedValue.ToString());
+
+            }
+            else
+            {
+                MessageBox.Show("Defina uma Área para ser pesquisada!");
             }
 
         }
@@ -48,16 +53,13 @@ namespace MVC.Telas
         private void btnEditar_Click(object sender, EventArgs e)
         {
             //label5.Visible = true;
-            label2.Enabled = true;
-            txtAssunto.Visible = true;
-           
-
-
+            txtAssunto.ReadOnly = false;
             lstAssunto.Visible = false;
             btnConfirmar.Visible = true;
             btnCancelar.Visible = true;
             btnBusca.Enabled = false;
             btnExcluir.Enabled = false;
+            btnEditar.Enabled = false;
         }
 
         public void Limpar()
@@ -88,12 +90,12 @@ namespace MVC.Telas
         {
             try
             {
-                if (MessageBox.Show("Tem certeza que deseja excluir o registro? ", "Confirmação", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show("Tem certeza que deseja excluir o Assunto selecionado? ", "Confirmação", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     Assunto.Excluir(Convert.ToInt32(txtcodigo.Text));
                     Limpar();
-                    lstAssunto.DataSource = Assunto.listadescricaoAssunto("limpo");
-                    MessageBox.Show("Cadastro excluido com sucesso");
+                    lstAssunto.DataSource = Assunto.listadescricaoAssunto("0");
+                    MessageBox.Show("Assunto excluído com sucesso!");
 
                 }
             }
@@ -107,6 +109,7 @@ namespace MVC.Telas
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             txtAssunto.Visible = true;
+            txtAssunto.ReadOnly = true;
             txtcodigo.Enabled = false;
             cbxArea.Enabled = true;
             lstAssunto.Visible = true;
@@ -114,16 +117,18 @@ namespace MVC.Telas
             btnCancelar.Visible = false;
             btnBusca.Enabled = true;
             btnExcluir.Enabled = true;
+            btnEditar.Enabled = true;
         }
 
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             Limpar();
+            lstAssunto.DataSource = Assunto.listadescricaoAssunto(Convert.ToString(0));
         }
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-                        try
+            try
             {
                 if (MessageBox.Show("Tem certeza que deseja alterar o registro?", "Confirmação", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
@@ -133,8 +138,8 @@ namespace MVC.Telas
                     // Chamando o metodo Alterar.
                     a.Alterar(Convert.ToInt32(txtcodigo.Text));
                     // limpando a pesquisa do list
-                    lstAssunto.DataSource = Assunto.listadescricaoAssunto("limpo");
-                    MessageBox.Show("Cadastro excluido com sucesso");
+                    lstAssunto.DataSource = Assunto.listadescricaoAssunto("0");
+                    MessageBox.Show("Assunto alterado com sucesso!");
                     Limpar();
                     //fvoltando para tela inicial.
                     txtAssunto.Visible = true;
@@ -164,6 +169,13 @@ namespace MVC.Telas
             {
                 btnExcluir.Enabled = false;
             }
+        }
+
+        private void cbxArea_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtcodigo.Clear();
+            txtAssunto.Clear();
+            lstAssunto.DataSource = Assunto.listadescricaoAssunto(Convert.ToString(0));
         }
 
         }

@@ -31,6 +31,7 @@ namespace MVC.Telas
 
         private void btnLimpar_Click(object sender, EventArgs e)
         {
+            lstArea.DataSource = Area.ListaArea("limpo");
             Limpar();
         }
 
@@ -40,6 +41,8 @@ namespace MVC.Telas
             {
 
                 lstArea.DataSource = Area.ListaArea(txtArea.Text.ToString());
+                btnEditar.Enabled = true;
+                btnExcluir.Enabled = true;
             }
 
         }
@@ -63,7 +66,7 @@ namespace MVC.Telas
                     Area.Excluir(Convert.ToInt32(txtCodigo.Text));
                     Limpar();
                     lstArea.DataSource = Area.ListaArea("limpo");
-                    MessageBox.Show("Cadastro excluido com sucesso");
+                    MessageBox.Show("Área excluída com sucesso");
             }
         }
 
@@ -79,7 +82,7 @@ namespace MVC.Telas
 
                     Limpar();
                     lstArea.DataSource = Area.ListaArea("limpo");
-                    MessageBox.Show("Cadastro excluido com sucesso");
+                    MessageBox.Show("Área alterada com sucesso!");
                     //fvoltando para tela inicial.
                     txtArea.Visible = true;
                     txtCodigo.Enabled = false;
