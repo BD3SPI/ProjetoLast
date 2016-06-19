@@ -49,7 +49,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.lstAlternativas = new System.Windows.Forms.ListBox();
             this.txtAlternativa = new System.Windows.Forms.RichTextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.ckbCorreta = new System.Windows.Forms.CheckBox();
@@ -59,9 +58,11 @@
             this.btnRemover = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.ckbAddAlter = new System.Windows.Forms.CheckBox();
+            this.dgvAlternativa = new System.Windows.Forms.DataGridView();
             this.panBusca.SuspendLayout();
             this.panAlterar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAlternativa)).BeginInit();
             this.SuspendLayout();
             // 
             // panBusca
@@ -247,12 +248,12 @@
             // 
             // panAlterar
             // 
+            this.panAlterar.Controls.Add(this.dgvAlternativa);
             this.panAlterar.Controls.Add(this.llbImagem);
             this.panAlterar.Controls.Add(this.lblImagem);
             this.panAlterar.Controls.Add(this.label5);
             this.panAlterar.Controls.Add(this.pictureBox1);
             this.panAlterar.Controls.Add(this.label8);
-            this.panAlterar.Controls.Add(this.lstAlternativas);
             this.panAlterar.Controls.Add(this.txtAlternativa);
             this.panAlterar.Controls.Add(this.label12);
             this.panAlterar.Enabled = false;
@@ -308,15 +309,6 @@
             this.label8.Size = new System.Drawing.Size(110, 24);
             this.label8.TabIndex = 75;
             this.label8.Text = "Alternativas:";
-            // 
-            // lstAlternativas
-            // 
-            this.lstAlternativas.FormattingEnabled = true;
-            this.lstAlternativas.ItemHeight = 24;
-            this.lstAlternativas.Location = new System.Drawing.Point(146, 253);
-            this.lstAlternativas.Name = "lstAlternativas";
-            this.lstAlternativas.Size = new System.Drawing.Size(375, 76);
-            this.lstAlternativas.TabIndex = 74;
             // 
             // txtAlternativa
             // 
@@ -424,6 +416,14 @@
             this.ckbAddAlter.UseVisualStyleBackColor = true;
             this.ckbAddAlter.CheckedChanged += new System.EventHandler(this.ckbAddAlter_CheckedChanged);
             // 
+            // dgvAlternativa
+            // 
+            this.dgvAlternativa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAlternativa.Location = new System.Drawing.Point(146, 210);
+            this.dgvAlternativa.Name = "dgvAlternativa";
+            this.dgvAlternativa.Size = new System.Drawing.Size(405, 121);
+            this.dgvAlternativa.TabIndex = 86;
+            // 
             // frmQuestaoPsq
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -452,6 +452,7 @@
             this.panAlterar.ResumeLayout(false);
             this.panAlterar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAlternativa)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -473,7 +474,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ListBox lstQuestao;
         private System.Windows.Forms.ComboBox cbxProf;
-        private System.Windows.Forms.ListBox lstAlternativas;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnLimpar;
@@ -489,6 +489,6 @@
         private System.Windows.Forms.Button btnRemover;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.CheckBox ckbAddAlter;
-
+        private System.Windows.Forms.DataGridView dgvAlternativa;
     }
 }

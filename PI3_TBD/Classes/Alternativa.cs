@@ -86,7 +86,7 @@ namespace MVC.Classes
 
                 using (var comm = conn.CreateCommand())
                 {
-                    comm.CommandText = "SELECT textoalternativa AS 'Texto', correta from ALTERNATIVA WHERE CODQUESTAO = " + id;
+                    comm.CommandText = "SELECT textoalternativa AS 'Texto', codAlternativa, correta from ALTERNATIVA WHERE CODQUESTAO = " + id;
 
 
                     var dataTable = new DataTable();

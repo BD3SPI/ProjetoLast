@@ -262,6 +262,7 @@ namespace MVC.Telas
                     questao.Alterarsemimagem(codQuestao);
 
                 }
+                
                 MessageBox.Show("Questão alterada com sucesso");
                 panQuestao.Enabled = false;
                 panAlternativa.Enabled = true;

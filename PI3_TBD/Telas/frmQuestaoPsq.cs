@@ -32,23 +32,32 @@ namespace MVC.Telas
 
         private void btnBusca_Click(object sender, EventArgs e)
         {
-            Questao Q = new Questao();
-            Q.tipoQuestao.codTipoQuestao = cmbTpQuestao.SelectedValue.ToString();
-            Q.assunto.codigo = Convert.ToInt32(cbxAssunto.SelectedValue.ToString());
-            Q.professor.codigo = cbxProf.SelectedValue.ToString();
+            try
+            {
+                Questao Q = new Questao();
+                Q.tipoQuestao.codTipoQuestao = cmbTpQuestao.SelectedValue.ToString();
+                Q.assunto.codigo = Convert.ToInt32(cbxAssunto.SelectedValue.ToString());
+                Q.professor.codigo = cbxProf.SelectedValue.ToString();
 
-            lstQuestao.DataSource = Q.listarQuestao();
-            lstQuestao.DisplayMember = "textoQuestao";
-            lstQuestao.ValueMember = "codQuestao";
+                lstQuestao.DataSource = Q.listarQuestao();
+                lstQuestao.DisplayMember = "textoQuestao";
+                lstQuestao.ValueMember = "codQuestao";
+            }
+             catch (Exception)
+            {
+                MessageBox.Show("Por favor selecione os filtros");
+            }
         }
 
         private void lstQuestao_Click(object sender, EventArgs e)
         {
             txtAlternativa.Text = lstQuestao.SelectedValue.ToString();
             Alternativa a = new Alternativa();
-            lstAlternativas.DataSource = a.listarAlternativa(txtAlternativa.Text);
-            lstAlternativas.DisplayMember = "texto";
-            lstAlternativas.ValueMember = "codigo";
+            //lstAlternativas.DataSource = a.listarAlternativa(txtAlternativa.Text);
+            //lstAlternativas.DisplayMember = "texto";
+            //lstAlternativas.ValueMember = "codigo";
+            a.PreencherDataGridAlternativa(dgvAlternativa, txtAlternativa.Text);
+            dgvAlternativa.Columns[1].Visible = false;
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -104,6 +113,11 @@ namespace MVC.Telas
             cbxProf.SelectedItem = null;
             cmbTpQuestao.SelectedItem = null;
             lstQuestao.ClearSelected();
+        }
+
+        private void lstAlternativas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
