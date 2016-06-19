@@ -102,7 +102,7 @@ namespace MVC.Telas
             catch (Exception)
             {
 
-                MessageBox.Show("Erro");
+                MessageBox.Show("Erro ao excluir Assunto. Assunto já vinculado com alguma questão. ");
             }
         }
 

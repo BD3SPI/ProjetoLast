@@ -33,6 +33,7 @@ namespace MVC.Telas
 
                     area.Inserir();
                     MessageBox.Show("Dados cadastrada com sucesso!");
+                    area.PreencherDataGrid(dataGridView1);
 
                 }
                 else
