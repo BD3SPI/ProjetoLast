@@ -237,6 +237,32 @@ namespace MVC.Telas
             cbxAssunto.SelectedIndex = -1;
             cbxEvento.SelectedIndex = -1;
         }
+
+        private void cbxEvento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Questao questao = new Questao();
+                string evento = cbxEvento.SelectedValue.ToString();
+                //  Carregar as perguntas do GridView
+                if (ckbCarrega.Checked == true)
+                {
+                    questao.PreencherDataGridPerguntasdaQuestao(dataGridView2, evento);
+                    dataGridView2.Columns[0].Visible = false;
+                    dataGridView2.Columns[2].Visible = false;
+
+                }
+                // limpando o grid - Perguntas
+                else
+                {
+                    this.dataGridView2.DataSource = null;
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Selecione o evento");
+            }
+        }
     }
   }
  

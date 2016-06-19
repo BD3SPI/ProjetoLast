@@ -302,7 +302,7 @@ namespace MVC.Classes
         {
             try
             {
-                string sql = "select textoquestao,codquestao from questao where codtipoquestao = @codtipoquestao or codassunto = @codassunto or codprofessor = @codprofessor";
+                string sql = "select textoquestao, codquestao from questao where codtipoquestao = @codtipoquestao and codassunto = @codassunto and codprofessor = @codprofessor";
                 SqlConnection con = Conexao.AbrirConexao();
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandText = sql;

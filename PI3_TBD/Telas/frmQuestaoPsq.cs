@@ -28,13 +28,6 @@ namespace MVC.Telas
             cmbTpQuestao.DataSource = tipoQuestao.SelecionarTipo();
             cmbTpQuestao.DisplayMember = "descricao";
             cmbTpQuestao.ValueMember = "codTipoQuestao";
-
-
-        }
-
-        private void frmQuestaoPsq_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void btnBusca_Click(object sender, EventArgs e)

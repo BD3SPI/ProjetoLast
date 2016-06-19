@@ -171,6 +171,7 @@
             this.cbxEvento.Name = "cbxEvento";
             this.cbxEvento.Size = new System.Drawing.Size(371, 28);
             this.cbxEvento.TabIndex = 30;
+            this.cbxEvento.SelectedIndexChanged += new System.EventHandler(this.cbxEvento_SelectedIndexChanged);
             // 
             // label1
             // 

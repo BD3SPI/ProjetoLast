@@ -41,13 +41,11 @@
             this.label6 = new System.Windows.Forms.Label();
             this.cbxAssunto = new System.Windows.Forms.ComboBox();
             this.cmbTpQuestao = new System.Windows.Forms.ComboBox();
-            this.cmbNivel = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panAlterar = new System.Windows.Forms.Panel();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.label9 = new System.Windows.Forms.Label();
+            this.llbImagem = new System.Windows.Forms.LinkLabel();
+            this.lblImagem = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -81,12 +79,10 @@
             this.panBusca.Controls.Add(this.label6);
             this.panBusca.Controls.Add(this.cbxAssunto);
             this.panBusca.Controls.Add(this.cmbTpQuestao);
-            this.panBusca.Controls.Add(this.cmbNivel);
-            this.panBusca.Controls.Add(this.label4);
             this.panBusca.Controls.Add(this.label3);
             this.panBusca.Controls.Add(this.label2);
             this.panBusca.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panBusca.Location = new System.Drawing.Point(15, 15);
+            this.panBusca.Location = new System.Drawing.Point(15, 16);
             this.panBusca.Margin = new System.Windows.Forms.Padding(6);
             this.panBusca.Name = "panBusca";
             this.panBusca.Size = new System.Drawing.Size(489, 506);
@@ -122,16 +118,15 @@
             // 
             this.lstQuestao.FormattingEnabled = true;
             this.lstQuestao.ItemHeight = 24;
-            this.lstQuestao.Location = new System.Drawing.Point(23, 233);
+            this.lstQuestao.Location = new System.Drawing.Point(11, 195);
             this.lstQuestao.Name = "lstQuestao";
-            this.lstQuestao.Size = new System.Drawing.Size(460, 172);
+            this.lstQuestao.Size = new System.Drawing.Size(472, 196);
             this.lstQuestao.TabIndex = 73;
             this.lstQuestao.Click += new System.EventHandler(this.lstQuestao_Click);
             // 
             // btnEditar
             // 
             this.btnEditar.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnEditar.Enabled = false;
             this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
             this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -162,11 +157,11 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(174, 196);
+            this.label10.Location = new System.Drawing.Point(169, 159);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(161, 24);
+            this.label10.Size = new System.Drawing.Size(156, 24);
             this.label10.TabIndex = 68;
-            this.label10.Text = "Lista de questões:";
+            this.label10.Text = "Lista de questões";
             // 
             // btnBusca
             // 
@@ -197,7 +192,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(7, 154);
+            this.label6.Location = new System.Drawing.Point(7, 115);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(129, 24);
             this.label6.TabIndex = 66;
@@ -224,36 +219,10 @@
             "F",
             "M",
             "D"});
-            this.cmbTpQuestao.Location = new System.Drawing.Point(165, 151);
+            this.cmbTpQuestao.Location = new System.Drawing.Point(165, 112);
             this.cmbTpQuestao.Name = "cmbTpQuestao";
             this.cmbTpQuestao.Size = new System.Drawing.Size(318, 32);
             this.cmbTpQuestao.TabIndex = 27;
-            // 
-            // cmbNivel
-            // 
-            this.cmbNivel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbNivel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbNivel.FormattingEnabled = true;
-            this.cmbNivel.ItemHeight = 24;
-            this.cmbNivel.Items.AddRange(new object[] {
-            "",
-            "F",
-            "M",
-            "D"});
-            this.cmbNivel.Location = new System.Drawing.Point(165, 113);
-            this.cmbNivel.Name = "cmbNivel";
-            this.cmbNivel.Size = new System.Drawing.Size(318, 32);
-            this.cmbNivel.TabIndex = 22;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(7, 116);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 24);
-            this.label4.TabIndex = 21;
-            this.label4.Text = "Nível";
             // 
             // label3
             // 
@@ -277,8 +246,8 @@
             // 
             // panAlterar
             // 
-            this.panAlterar.Controls.Add(this.linkLabel1);
-            this.panAlterar.Controls.Add(this.label9);
+            this.panAlterar.Controls.Add(this.llbImagem);
+            this.panAlterar.Controls.Add(this.lblImagem);
             this.panAlterar.Controls.Add(this.label5);
             this.panAlterar.Controls.Add(this.pictureBox1);
             this.panAlterar.Controls.Add(this.label8);
@@ -292,26 +261,24 @@
             this.panAlterar.Size = new System.Drawing.Size(570, 334);
             this.panAlterar.TabIndex = 10;
             // 
-            // linkLabel1
+            // llbImagem
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(166, 147);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(348, 24);
-            this.linkLabel1.TabIndex = 85;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Clique aqui para cadastrar uma imagem.";
-            this.linkLabel1.Visible = false;
+            this.llbImagem.AutoSize = true;
+            this.llbImagem.Location = new System.Drawing.Point(166, 147);
+            this.llbImagem.Name = "llbImagem";
+            this.llbImagem.Size = new System.Drawing.Size(348, 24);
+            this.llbImagem.TabIndex = 85;
+            this.llbImagem.TabStop = true;
+            this.llbImagem.Text = "Clique aqui para cadastrar uma imagem.";
             // 
-            // label9
+            // lblImagem
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(211, 121);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(253, 24);
-            this.label9.TabIndex = 84;
-            this.label9.Text = "Não há imagens cadastradas";
-            this.label9.Visible = false;
+            this.lblImagem.AutoSize = true;
+            this.lblImagem.Location = new System.Drawing.Point(211, 121);
+            this.lblImagem.Name = "lblImagem";
+            this.lblImagem.Size = new System.Drawing.Size(253, 24);
+            this.lblImagem.TabIndex = 84;
+            this.lblImagem.Text = "Não há imagens cadastradas";
             // 
             // label5
             // 
@@ -479,7 +446,6 @@
             this.Name = "frmQuestaoPsq";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmQuestaoPsq";
-            this.Load += new System.EventHandler(this.frmQuestaoPsq_Load);
             this.panBusca.ResumeLayout(false);
             this.panBusca.PerformLayout();
             this.panAlterar.ResumeLayout(false);
@@ -497,8 +463,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cbxAssunto;
         private System.Windows.Forms.ComboBox cmbTpQuestao;
-        private System.Windows.Forms.ComboBox cmbNivel;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panAlterar;
@@ -515,8 +479,8 @@
         private System.Windows.Forms.Button btnBusca;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.LinkLabel llbImagem;
+        private System.Windows.Forms.Label lblImagem;
         private System.Windows.Forms.CheckBox ckbCorreta;
         private System.Windows.Forms.RichTextBox rxtTextoAlternativa;
         private System.Windows.Forms.Label label1;
