@@ -92,5 +92,18 @@ namespace MVC.Telas
                 btnAdicionar.Enabled = false;
             }
         }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            Questao Q = new Questao();
+            Q.tipoQuestao.codTipoQuestao = "0";
+            Q.assunto.codigo = 0;
+            Q.professor.codigo = Convert.ToString(0);
+            lstQuestao.DataSource = Q.listarQuestao();
+            cbxAssunto.SelectedItem = null;
+            cbxProf.SelectedItem = null;
+            cmbTpQuestao.SelectedItem = null;
+            lstQuestao.ClearSelected();
+        }
     }
 }
