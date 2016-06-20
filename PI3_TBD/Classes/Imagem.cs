@@ -14,8 +14,8 @@ namespace MVC.Classes
         public static int codImagem { get; set; }
         public static string tituloImagem { get; set; }
         public static byte[] imagem { get; set; }
-        
-        public static void SelecionarImagem()
+
+        public static void SelecionarImagem(string id)
         {
             //SqlConnection cn = new SqlConnection();
             SqlConnection cn = Conexao.AbrirConexao();
@@ -24,9 +24,9 @@ namespace MVC.Classes
             //cn.Open();
 
             SqlCommand cmd = cn.CreateCommand();
-            cmd.CommandText = "select TituloImagem, BitmapImagem from Imagem I where codImagem = @codImagem";
+            cmd.CommandText = "select TituloImagem, BitmapImagem from Imagem I inner join questao ON I.codimagem = questao.codimagem where codquestao = " + id;
             //cmd.CommandText = "select i.TituloImagem, i.BitmapImagem from Imagem I inner join questao q ON i.codimagem = q.codimagem where codquestao = " +idquestao;
-            cmd.Parameters.Add("@codImagem", SqlDbType.Int).Value = codImagem;
+            //cmd.Parameters.Add("@codImagem", SqlDbType.Int).Value = codImagem;
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {

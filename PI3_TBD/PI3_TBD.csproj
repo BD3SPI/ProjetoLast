@@ -50,6 +50,7 @@
     <Compile Include="Classes\Conexao.cs" />
     <Compile Include="Classes\Evento.cs" />
     <Compile Include="Classes\Imagem.cs" />
+    <Compile Include="Classes\JaPossuiAlternativacorretaException.cs" />
     <Compile Include="Classes\Login.cs" />
     <Compile Include="Classes\Professor.cs" />
     <Compile Include="Classes\Questao.cs" />

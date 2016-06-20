@@ -22,10 +22,10 @@ namespace MVC
 
         private void btnExibir_Click(object sender, EventArgs e)
         {
-            Imagem.codImagem = Convert.ToInt32(txtCodImagem.Text);
-            Imagem.SelecionarImagem();
-            System.IO.MemoryStream stream = new System.IO.MemoryStream(Imagem.imagem);
-            picImagem1.Image = Image.FromStream(stream);
+            //Imagem.codImagem = Convert.ToInt32(txtCodImagem.Text);
+            //Imagem.SelecionarImagem();
+            //System.IO.MemoryStream stream = new System.IO.MemoryStream(Imagem.imagem);
+            //picImagem1.Image = Image.FromStream(stream);
         }
 
         private void btnProcurar_Click(object sender, EventArgs e)

@@ -44,6 +44,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panAlterar = new System.Windows.Forms.Panel();
+            this.dgvAlternativa = new System.Windows.Forms.DataGridView();
             this.llbImagem = new System.Windows.Forms.LinkLabel();
             this.lblImagem = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -59,11 +60,10 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.ckbAddAlter = new System.Windows.Forms.CheckBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.dgvAlternativa = new System.Windows.Forms.DataGridView();
             this.panBusca.SuspendLayout();
             this.panAlterar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlternativa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panBusca
@@ -264,6 +264,14 @@
             this.panAlterar.Size = new System.Drawing.Size(570, 334);
             this.panAlterar.TabIndex = 10;
             // 
+            // dgvAlternativa
+            // 
+            this.dgvAlternativa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAlternativa.Location = new System.Drawing.Point(146, 253);
+            this.dgvAlternativa.Name = "dgvAlternativa";
+            this.dgvAlternativa.Size = new System.Drawing.Size(375, 78);
+            this.dgvAlternativa.TabIndex = 86;
+            // 
             // llbImagem
             // 
             this.llbImagem.AutoSize = true;
@@ -301,6 +309,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(146, 65);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(375, 182);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 76;
             this.pictureBox1.TabStop = false;
             // 
@@ -432,14 +441,6 @@
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // dgvAlternativa
-            // 
-            this.dgvAlternativa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAlternativa.Location = new System.Drawing.Point(146, 253);
-            this.dgvAlternativa.Name = "dgvAlternativa";
-            this.dgvAlternativa.Size = new System.Drawing.Size(375, 78);
-            this.dgvAlternativa.TabIndex = 86;
-            // 
             // frmQuestaoPsq
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -468,8 +469,8 @@
             this.panBusca.PerformLayout();
             this.panAlterar.ResumeLayout(false);
             this.panAlterar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlternativa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

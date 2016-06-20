@@ -36,6 +36,29 @@ namespace MVC.Classes
             con.Dispose();
         }
 
+
+        public int ValidarAlternativaCorreta(string id)
+        {
+            SqlConnection cn = Conexao.AbrirConexao();
+            SqlCommand cmd = cn.CreateCommand();
+            cmd.CommandText = "SELECT Count(*) correta from alternativa where correta = 1 and codquestao =" + id;
+
+            SqlDataReader dr = cmd.ExecuteReader();
+            bool valido = dr.HasRows;
+
+            int quant = 0;
+            while (dr.Read())
+            {
+                quant = Convert.ToInt32(dr["correta"].ToString());
+
+            }
+
+            return quant;
+
+            dr.Close();
+            dr.Dispose();
+        } 
+
         public void insereVouF()
         {
             StringBuilder sb = new StringBuilder();
