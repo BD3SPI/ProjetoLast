@@ -466,7 +466,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmQuestaoPsq";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmQuestaoPsq";
             this.Load += new System.EventHandler(this.frmQuestaoPsq_Load);
             this.panBusca.ResumeLayout(false);

@@ -102,7 +102,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmAreaIns";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Área";
             this.panArea.ResumeLayout(false);
             this.panArea.PerformLayout();

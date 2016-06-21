@@ -209,7 +209,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmEventoIns";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Evento";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

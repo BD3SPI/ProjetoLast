@@ -52,18 +52,28 @@ namespace MVC.Telas
 
         private void lstQuestao_Click(object sender, EventArgs e)
         {
-            txtAlternativa.Text = lstQuestao.SelectedValue.ToString();
-            Alternativa a = new Alternativa();
-            //lstAlternativas.DataSource = a.listarAlternativa(txtAlternativa.Text);
-            //lstAlternativas.DisplayMember = "texto";
-            //lstAlternativas.ValueMember = "codigo";
-            a.PreencherDataGridAlternativa(dgvAlternativa, txtAlternativa.Text);
-            dgvAlternativa.Columns[1].Visible = false;
-            txtAlternativa.Text = lstQuestao.SelectedValue.ToString();
-            // exibi a imagem, relacionada com a questão.
-            Imagem.SelecionarImagem(lstQuestao.SelectedValue.ToString());
-            System.IO.MemoryStream stream = new System.IO.MemoryStream(Imagem.imagem);
-            pictureBox1.Image = Image.FromStream(stream);
+            string texto = "Não há imagens cadastradas";
+            try
+            {
+                txtAlternativa.Text = lstQuestao.SelectedValue.ToString();
+                Alternativa a = new Alternativa();
+                //lstAlternativas.DataSource = a.listarAlternativa(txtAlternativa.Text);
+                //lstAlternativas.DisplayMember = "texto";
+                //lstAlternativas.ValueMember = "codigo";
+                a.PreencherDataGridAlternativa(dgvAlternativa, txtAlternativa.Text);
+                dgvAlternativa.Columns[1].Visible = false;
+                txtAlternativa.Text = lstQuestao.SelectedValue.ToString();
+                // exibi a imagem, relacionada com a questão.
+
+                Imagem.SelecionarImagem(lstQuestao.SelectedValue.ToString());
+                System.IO.MemoryStream stream = new System.IO.MemoryStream(Imagem.imagem);
+                pictureBox1.Image = Image.FromStream(stream);
+            }
+            catch (Exception)
+            {
+
+
+            }
         }
 
         private void btnEditar_Click(object sender, EventArgs e)

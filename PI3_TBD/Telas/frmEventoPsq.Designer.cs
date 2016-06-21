@@ -349,7 +349,7 @@
             // novaPesquisaToolStripMenuItem
             // 
             this.novaPesquisaToolStripMenuItem.Name = "novaPesquisaToolStripMenuItem";
-            this.novaPesquisaToolStripMenuItem.Size = new System.Drawing.Size(140, 29);
+            this.novaPesquisaToolStripMenuItem.Size = new System.Drawing.Size(139, 29);
             this.novaPesquisaToolStripMenuItem.Text = "Nova Pesquisa";
             this.novaPesquisaToolStripMenuItem.Click += new System.EventHandler(this.novaPesquisaToolStripMenuItem_Click);
             // 
@@ -372,7 +372,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmEventoPsq";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pesquisa de Evento";
             this.Load += new System.EventHandler(this.frmEventoPsq_Load_1);
             this.panEventoPsq.ResumeLayout(false);

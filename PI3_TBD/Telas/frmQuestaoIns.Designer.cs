@@ -415,7 +415,7 @@
             this.Controls.Add(this.panQuestao);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "frmQuestaoIns";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Questões";
             this.panQuestao.ResumeLayout(false);
             this.panQuestao.PerformLayout();
