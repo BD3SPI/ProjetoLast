@@ -59,11 +59,11 @@ namespace MVC.Telas
             //lstAlternativas.ValueMember = "codigo";
             a.PreencherDataGridAlternativa(dgvAlternativa, txtAlternativa.Text);
             dgvAlternativa.Columns[1].Visible = false;
-
-
-            a.novoIdAlternativas(dgvAlternativa.)
-
-
+            txtAlternativa.Text = lstQuestao.SelectedValue.ToString();
+            // exibi a imagem, relacionada com a questão.
+            Imagem.SelecionarImagem(lstQuestao.SelectedValue.ToString());
+            System.IO.MemoryStream stream = new System.IO.MemoryStream(Imagem.imagem);
+            pictureBox1.Image = Image.FromStream(stream);
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
