@@ -262,6 +262,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(414, 438);
+            this.ControlBox = false;
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
