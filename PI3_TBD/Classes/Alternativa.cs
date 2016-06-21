@@ -61,20 +61,28 @@ namespace MVC.Classes
 
         public void insereVouF()
         {
-            StringBuilder sb = new StringBuilder();
-            sb.AppendLine("INSERT INTO alternativa(codalternativa,codquestao,correta,textoalternativa) VALUES(@codalternativa,@codquestao,@correta,@textoalternativa)");
+            try
+            {
+                StringBuilder sb = new StringBuilder();
+                sb.AppendLine("INSERT INTO alternativa(codalternativa,codquestao,correta,textoalternativa) VALUES(@codalternativa,@codquestao,@correta,@textoalternativa)");
 
-            SqlConnection con = Conexao.AbrirConexao();
-            SqlCommand cmd = con.CreateCommand();
-            cmd.CommandText = sb.ToString();
-            cmd.Parameters.AddWithValue("@textoalternativa", SqlDbType.VarChar).Value = "";
-            cmd.Parameters.AddWithValue("@codalternativa", SqlDbType.Int).Value = this.contador;
-            cmd.Parameters.AddWithValue("@codquestao", SqlDbType.Int).Value = this.codquestao;
-            cmd.Parameters.AddWithValue("@correta", SqlDbType.Bit).Value = this.correta;
+                SqlConnection con = Conexao.AbrirConexao();
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandText = sb.ToString();
+                cmd.Parameters.AddWithValue("@textoalternativa", SqlDbType.VarChar).Value = "";
+                cmd.Parameters.AddWithValue("@codalternativa", SqlDbType.Int).Value = this.contador;
+                cmd.Parameters.AddWithValue("@codquestao", SqlDbType.Int).Value = this.codquestao;
+                cmd.Parameters.AddWithValue("@correta", SqlDbType.Bit).Value = this.correta;
 
-            cmd.ExecuteNonQuery();
-            con.Close();
-            con.Dispose();
+                cmd.ExecuteNonQuery();
+                con.Close();
+                con.Dispose();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Já há uma alternativa correta para esta questão. Por gentileza, verifique as alternativas cadastradas");
+            
+            }
         }
 
         public Alternativa()

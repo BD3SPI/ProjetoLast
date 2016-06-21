@@ -44,6 +44,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panAlterar = new System.Windows.Forms.Panel();
+            this.txtquestao = new System.Windows.Forms.RichTextBox();
             this.dgvAlternativa = new System.Windows.Forms.DataGridView();
             this.llbImagem = new System.Windows.Forms.LinkLabel();
             this.lblImagem = new System.Windows.Forms.Label();
@@ -60,6 +61,7 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.ckbAddAlter = new System.Windows.Forms.CheckBox();
             this.btnFinalizar = new System.Windows.Forms.Button();
+            this.btnCadastrarimagem = new System.Windows.Forms.Button();
             this.panBusca.SuspendLayout();
             this.panAlterar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlternativa)).BeginInit();
@@ -250,6 +252,8 @@
             // 
             // panAlterar
             // 
+            this.panAlterar.Controls.Add(this.btnCadastrarimagem);
+            this.panAlterar.Controls.Add(this.txtquestao);
             this.panAlterar.Controls.Add(this.dgvAlternativa);
             this.panAlterar.Controls.Add(this.llbImagem);
             this.panAlterar.Controls.Add(this.lblImagem);
@@ -263,6 +267,15 @@
             this.panAlterar.Name = "panAlterar";
             this.panAlterar.Size = new System.Drawing.Size(570, 413);
             this.panAlterar.TabIndex = 10;
+            // 
+            // txtquestao
+            // 
+            this.txtquestao.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtquestao.Location = new System.Drawing.Point(146, 3);
+            this.txtquestao.Name = "txtquestao";
+            this.txtquestao.Size = new System.Drawing.Size(375, 56);
+            this.txtquestao.TabIndex = 87;
+            this.txtquestao.Text = "";
             // 
             // dgvAlternativa
             // 
@@ -312,6 +325,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 76;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label8
             // 
@@ -326,11 +340,12 @@
             // txtAlternativa
             // 
             this.txtAlternativa.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAlternativa.Location = new System.Drawing.Point(146, 9);
+            this.txtAlternativa.Location = new System.Drawing.Point(94, 9);
             this.txtAlternativa.Name = "txtAlternativa";
-            this.txtAlternativa.Size = new System.Drawing.Size(375, 50);
+            this.txtAlternativa.Size = new System.Drawing.Size(46, 46);
             this.txtAlternativa.TabIndex = 69;
             this.txtAlternativa.Text = "";
+            this.txtAlternativa.TextChanged += new System.EventHandler(this.txtAlternativa_TextChanged);
             // 
             // label12
             // 
@@ -443,6 +458,21 @@
             this.btnFinalizar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnFinalizar.UseVisualStyleBackColor = true;
             // 
+            // btnCadastrarimagem
+            // 
+            this.btnCadastrarimagem.Enabled = false;
+            this.btnCadastrarimagem.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastrarimagem.Image = ((System.Drawing.Image)(resources.GetObject("btnCadastrarimagem.Image")));
+            this.btnCadastrarimagem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCadastrarimagem.Location = new System.Drawing.Point(170, 72);
+            this.btnCadastrarimagem.Name = "btnCadastrarimagem";
+            this.btnCadastrarimagem.Size = new System.Drawing.Size(97, 44);
+            this.btnCadastrarimagem.TabIndex = 90;
+            this.btnCadastrarimagem.Text = "Adicionar";
+            this.btnCadastrarimagem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCadastrarimagem.UseVisualStyleBackColor = true;
+            this.btnCadastrarimagem.Click += new System.EventHandler(this.btnCadastrarimagem_Click);
+            // 
             // frmQuestaoPsq
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -512,6 +542,7 @@
         private System.Windows.Forms.CheckBox ckbAddAlter;
         private System.Windows.Forms.DataGridView dgvAlternativa;
         private System.Windows.Forms.Button btnFinalizar;
-
+        private System.Windows.Forms.RichTextBox txtquestao;
+        private System.Windows.Forms.Button btnCadastrarimagem;
     }
 }

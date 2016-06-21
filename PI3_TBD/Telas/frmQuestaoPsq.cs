@@ -52,19 +52,38 @@ namespace MVC.Telas
 
         private void lstQuestao_Click(object sender, EventArgs e)
         {
-            txtAlternativa.Text = lstQuestao.SelectedValue.ToString();
-            Alternativa a = new Alternativa();
-            //lstAlternativas.DataSource = a.listarAlternativa(txtAlternativa.Text);
-            //lstAlternativas.DisplayMember = "texto";
-            //lstAlternativas.ValueMember = "codigo";
-            a.PreencherDataGridAlternativa(dgvAlternativa, txtAlternativa.Text);
-            dgvAlternativa.Columns[1].Visible = false;
-            txtAlternativa.Text = lstQuestao.SelectedValue.ToString();
+           
+           
+                txtAlternativa.Text = lstQuestao.SelectedValue.ToString();
+                txtquestao.Text = lstQuestao.SelectedItem.ToString();
+                Alternativa a = new Alternativa();
+                //lstAlternativas.DataSource = a.listarAlternativa(txtAlternativa.Text);
+                //lstAlternativas.DisplayMember = "texto";
+                //lstAlternativas.ValueMember = "codigo";
+                a.PreencherDataGridAlternativa(dgvAlternativa, txtAlternativa.Text);
+                dgvAlternativa.Columns[1].Visible = false;
+                txtAlternativa.Text = lstQuestao.SelectedValue.ToString();
             // exibi a imagem, relacionada com a questão.
-            Imagem.SelecionarImagem(lstQuestao.SelectedValue.ToString());
-            System.IO.MemoryStream stream = new System.IO.MemoryStream(Imagem.imagem);
-            pictureBox1.Image = Image.FromStream(stream);
-        }
+            pictureBox1.Image = null;
+                Imagem.SelecionarImagem(lstQuestao.SelectedValue.ToString());
+            if (Imagem.imagem == null)
+            {
+                llbImagem.Visible = true;
+                btnCadastrarimagem.Enabled = true;
+
+            }
+            else
+            {
+                llbImagem.Visible = false;
+                btnCadastrarimagem.Enabled = false;
+                System.IO.MemoryStream stream = new System.IO.MemoryStream(Imagem.imagem);
+                pictureBox1.Image = Image.FromStream(stream);
+                Imagem.imagem = null;
+            }
+
+            }
+   
+        
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
@@ -73,6 +92,7 @@ namespace MVC.Telas
             btnCancelar.Enabled = true;
             panBusca.Enabled = false;
             dgvAlternativa.Enabled = true;
+            btnCadastrarimagem.Enabled = true;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -149,6 +169,24 @@ namespace MVC.Telas
         private void lstQuestao_SelectedIndexChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtAlternativa_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCadastrarimagem_Click(object sender, EventArgs e)
+        {
+            Questao q = new Questao();
+
+            q.Alterarimagem(txtAlternativa.Text);
+            MessageBox.Show("Foto cadastrada com sucesso");
         }
     }
 }

@@ -152,7 +152,7 @@ namespace MVC.Telas
                     alternativa.PreencherDataGridAlternativa(dataGridView1, codQuestao);
                     ckCorreta.Checked = false;
                 }
-
+                int cont = 0;
                 if (cmbTpQuestao.SelectedValue.Equals("V"))
                 {
 
@@ -162,7 +162,12 @@ namespace MVC.Telas
                     alternativa.contador = contadorAlternativas;
                     alternativa.correta = bit;
                     alternativa.codquestao = codQuestao;
+                    if (cont > 1)
+                    {
+                        throw new JaPossuiAlternativacorretaException();
+                    }
                     alternativa.insereVouF();
+                    cont++;
                     MessageBox.Show("Alternativa cadastrada com sucesso");
                     alternativa.PreencherDataGridAlternativa(dataGridView1, codQuestao);
                     ckCorreta.Checked = false;

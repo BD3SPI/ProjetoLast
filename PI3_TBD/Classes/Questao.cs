@@ -271,6 +271,29 @@ namespace MVC.Classes
             }
         }
 
+        public void Alterarimagem(string id)
+        {
+            try
+            {
+                SqlConnection con = Conexao.AbrirConexao();
+                SqlCommand cmd = con.CreateCommand();
+
+                cmd.CommandText = "UPDATE QUESTAO SET CODIMAGEM = @CODIMAGEM where CODQUESTAO = " + id;
+
+                cmd.Parameters.Add("@CODIMAGEM ", SqlDbType.Int).Value = Imagem.codImagem;
+
+                cmd.ExecuteNonQuery();
+
+
+                con.Close();
+
+            }
+            catch (ArgumentException)
+            {
+                MessageBox.Show("Falha no Cadastro!", "Mensagem");
+            }
+        }
+
 
         public void Alterarsemimagem(string texto)
         {

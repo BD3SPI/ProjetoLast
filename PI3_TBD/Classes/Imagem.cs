@@ -17,6 +17,7 @@ namespace MVC.Classes
 
         public static void SelecionarImagem(string id)
         {
+            
             //SqlConnection cn = new SqlConnection();
             SqlConnection cn = Conexao.AbrirConexao();
             //SqlCommand cmd = cn.CreateCommand();
@@ -33,6 +34,7 @@ namespace MVC.Classes
                 tituloImagem = dr.GetString(dr.GetOrdinal("tituloImagem"));
                 imagem = (byte[])dr["bitmapImagem"];
             }
+            
             cn.Close();
             cn.Dispose();
         }
