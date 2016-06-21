@@ -58,8 +58,8 @@
             this.btnRemover = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.ckbAddAlter = new System.Windows.Forms.CheckBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.dgvAlternativa = new System.Windows.Forms.DataGridView();
+            this.btnFinalizar = new System.Windows.Forms.Button();
             this.panBusca.SuspendLayout();
             this.panAlterar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -420,18 +420,6 @@
             this.ckbAddAlter.UseVisualStyleBackColor = true;
             this.ckbAddAlter.CheckedChanged += new System.EventHandler(this.ckbAddAlter_CheckedChanged);
             // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(513, 475);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(133, 44);
-            this.button2.TabIndex = 90;
-            this.button2.Text = "Finalizar";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // dgvAlternativa
             // 
             this.dgvAlternativa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -440,13 +428,26 @@
             this.dgvAlternativa.Size = new System.Drawing.Size(375, 78);
             this.dgvAlternativa.TabIndex = 86;
             // 
+            // btnFinalizar
+            // 
+            this.btnFinalizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFinalizar.Image = ((System.Drawing.Image)(resources.GetObject("btnFinalizar.Image")));
+            this.btnFinalizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFinalizar.Location = new System.Drawing.Point(513, 475);
+            this.btnFinalizar.Name = "btnFinalizar";
+            this.btnFinalizar.Size = new System.Drawing.Size(133, 44);
+            this.btnFinalizar.TabIndex = 89;
+            this.btnFinalizar.Text = "Finalizar";
+            this.btnFinalizar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnFinalizar.UseVisualStyleBackColor = true;
+            // 
             // frmQuestaoPsq
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1095, 536);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnFinalizar);
             this.Controls.Add(this.ckbAddAlter);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.ckbCorreta);
@@ -506,8 +507,8 @@
         private System.Windows.Forms.Button btnRemover;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.CheckBox ckbAddAlter;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView dgvAlternativa;
+        private System.Windows.Forms.Button btnFinalizar;
 
     }
 }
