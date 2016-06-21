@@ -24,7 +24,7 @@ namespace MVC.Telas
             SqlConnection con = Conexao.AbrirConexao();
             SqlCommand cmd = new SqlCommand(sql, con);
             SqlDataReader read = cmd.ExecuteReader();
-            
+
         }
 
         void limpar()
@@ -39,34 +39,48 @@ namespace MVC.Telas
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Tem certeza que deseja finalizar o cadastro?", "My Application", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            try
             {
-                Professor Prof = new Professor();
-                Prof.nome = (txtNome.Text);
-                Prof.email = (txtEmail.Text);
-                Prof.senha = (txtSenha.Text);
-                Prof.idSenac = (txtIdSen.Text);
-
-                if (rbA.Checked)
-                    Prof.tipo = ("A");
-                else
-                    Prof.tipo = ("P");
-
-
-                if (txtNome.Text.Equals("") || txtEmail.Text.Equals("") || txtIdSen.Text.Equals("") || txtSenha.Text.Equals(""))
+                if (MessageBox.Show("Tem certeza que deseja finalizar o cadastro?", "My Application", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
+                    Professor Prof = new Professor();
+                    Prof.nome = (txtNome.Text);
+                    Prof.email = (txtEmail.Text);
+                    // validando se email já existe no banco de dados;
+                    if (Prof.ValidarEmailexistente(Prof.email) == true)
+                    {
+                        throw new EmaiProfessorExistente();
+                    }
+                    Prof.senha = (txtSenha.Text);
+                    Prof.idSenac = (txtIdSen.Text);
 
-                    MessageBox.Show("Favor preencher todos os campos corretamente!", "Mensagem");
+                    if (rbA.Checked)
+                        Prof.tipo = ("A");
+                    else
+                        Prof.tipo = ("P");
+
+
+                    if (txtNome.Text.Equals("") || txtEmail.Text.Equals("") || txtIdSen.Text.Equals("") || txtSenha.Text.Equals(""))
+                    {
+
+                        MessageBox.Show("Favor preencher todos os campos corretamente!", "Mensagem");
+                    }
+                    else
+                    {
+                        Prof.Inserir();
+                        MessageBox.Show("Professor Inserido com sucesso!");
+                        Close();
+                    }
                 }
-                else
-                {
-                    Prof.Inserir();
-                    MessageBox.Show("Professor Inserido com sucesso!");
-                    Close();
-                }
-                
+
             }
-            
+            catch (EmaiProfessorExistente)
+            {
+
+                MessageBox.Show("Email já cadastrado para outro professor. Por favor contatar o administrador do sistema.");
+            }
+
+
         }
 
         private void btnLimpar_Click(object sender, EventArgs e)
@@ -80,3 +94,4 @@ namespace MVC.Telas
 
     }
 }
+

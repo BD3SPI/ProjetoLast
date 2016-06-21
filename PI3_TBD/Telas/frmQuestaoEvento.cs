@@ -240,7 +240,7 @@ namespace MVC.Telas
                     questao.PreencherDataGridPerguntasdaQuestao(dataGridView2, evento);
                     dataGridView2.Columns[0].Visible = false;
                     dataGridView2.Columns[2].Visible = false;
-
+                    
                 }
                 // limpando o grid - Perguntas
                 else

@@ -64,6 +64,21 @@ namespace MVC.Classes
             { MessageBox.Show("Erro"); }
         }
 
+
+
+        public bool ValidarEmailexistente(string email)
+        {
+            SqlConnection cn = Conexao.AbrirConexao();
+            SqlCommand cmd = cn.CreateCommand();
+            cmd.CommandText = "select  email from Professor where email = @email";
+            cmd.Parameters.Add("@email", SqlDbType.VarChar, 30).Value = email;
+            SqlDataReader dr = cmd.ExecuteReader();
+            bool valido = dr.HasRows;
+            dr.Close();
+           
+            return valido;
+        }
+
         public void Alterar(int cod)
         {
             try
