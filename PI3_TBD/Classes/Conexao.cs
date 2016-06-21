@@ -27,6 +27,7 @@ namespace MVC.Classes
             sb.Password = "SistemasInternet123";
             con = new SqlConnection(sb.ConnectionString);
             //Realização de abertura de conexão com o Banco
+            //auuuu
             try
             {
                 con.Open();
