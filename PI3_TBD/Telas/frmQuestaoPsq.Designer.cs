@@ -59,7 +59,6 @@
             this.btnRemover = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.ckbAddAlter = new System.Windows.Forms.CheckBox();
-            this.dgvAlternativa = new System.Windows.Forms.DataGridView();
             this.btnFinalizar = new System.Windows.Forms.Button();
             this.panBusca.SuspendLayout();
             this.panAlterar.SuspendLayout();
@@ -85,7 +84,7 @@
             this.panBusca.Controls.Add(this.label3);
             this.panBusca.Controls.Add(this.label2);
             this.panBusca.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panBusca.Location = new System.Drawing.Point(15, 18);
+            this.panBusca.Location = new System.Drawing.Point(14, 55);
             this.panBusca.Margin = new System.Windows.Forms.Padding(6);
             this.panBusca.Name = "panBusca";
             this.panBusca.Size = new System.Drawing.Size(489, 506);
@@ -382,7 +381,7 @@
             this.btnAdicionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdicionar.Image = ((System.Drawing.Image)(resources.GetObject("btnAdicionar.Image")));
             this.btnAdicionar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdicionar.Location = new System.Drawing.Point(645, 554);
+            this.btnAdicionar.Location = new System.Drawing.Point(652, 554);
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(133, 44);
             this.btnAdicionar.TabIndex = 82;
@@ -431,20 +430,12 @@
             this.ckbAddAlter.UseVisualStyleBackColor = true;
             this.ckbAddAlter.CheckedChanged += new System.EventHandler(this.ckbAddAlter_CheckedChanged);
             // 
-            // dgvAlternativa
-            // 
-            this.dgvAlternativa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAlternativa.Location = new System.Drawing.Point(146, 253);
-            this.dgvAlternativa.Name = "dgvAlternativa";
-            this.dgvAlternativa.Size = new System.Drawing.Size(375, 78);
-            this.dgvAlternativa.TabIndex = 86;
-            // 
             // btnFinalizar
             // 
             this.btnFinalizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFinalizar.Image = ((System.Drawing.Image)(resources.GetObject("btnFinalizar.Image")));
             this.btnFinalizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFinalizar.Location = new System.Drawing.Point(513, 475);
+            this.btnFinalizar.Location = new System.Drawing.Point(513, 554);
             this.btnFinalizar.Name = "btnFinalizar";
             this.btnFinalizar.Size = new System.Drawing.Size(133, 44);
             this.btnFinalizar.TabIndex = 89;
@@ -457,7 +448,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1095, 536);
+            this.ClientSize = new System.Drawing.Size(1093, 610);
             this.Controls.Add(this.btnFinalizar);
             this.Controls.Add(this.ckbAddAlter);
             this.Controls.Add(this.btnCancelar);
