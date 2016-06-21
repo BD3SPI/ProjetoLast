@@ -267,7 +267,7 @@
             // dgvAlternativa
             // 
             this.dgvAlternativa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAlternativa.Location = new System.Drawing.Point(146, 253);
+            this.dgvAlternativa.Location = new System.Drawing.Point(146, 332);
             this.dgvAlternativa.Name = "dgvAlternativa";
             this.dgvAlternativa.Size = new System.Drawing.Size(375, 78);
             this.dgvAlternativa.TabIndex = 86;
@@ -275,7 +275,7 @@
             // llbImagem
             // 
             this.llbImagem.AutoSize = true;
-            this.llbImagem.Location = new System.Drawing.Point(166, 147);
+            this.llbImagem.Location = new System.Drawing.Point(167, 206);
             this.llbImagem.Name = "llbImagem";
             this.llbImagem.Size = new System.Drawing.Size(348, 24);
             this.llbImagem.TabIndex = 85;
@@ -287,7 +287,7 @@
             // lblImagem
             // 
             this.lblImagem.AutoSize = true;
-            this.lblImagem.Location = new System.Drawing.Point(211, 121);
+            this.lblImagem.Location = new System.Drawing.Point(212, 180);
             this.lblImagem.Name = "lblImagem";
             this.lblImagem.Size = new System.Drawing.Size(253, 24);
             this.lblImagem.TabIndex = 84;
@@ -308,7 +308,7 @@
             // 
             this.pictureBox1.Location = new System.Drawing.Point(146, 65);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(375, 182);
+            this.pictureBox1.Size = new System.Drawing.Size(375, 261);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 76;
             this.pictureBox1.TabStop = false;
@@ -317,7 +317,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(30, 253);
+            this.label8.Location = new System.Drawing.Point(30, 332);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(110, 24);
             this.label8.TabIndex = 75;
@@ -432,6 +432,7 @@
             // 
             // btnFinalizar
             // 
+            this.btnFinalizar.Enabled = false;
             this.btnFinalizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFinalizar.Image = ((System.Drawing.Image)(resources.GetObject("btnFinalizar.Image")));
             this.btnFinalizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;

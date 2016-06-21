@@ -73,6 +73,7 @@ namespace MVC.Telas
             btnCancelar.Enabled = true;
             panBusca.Enabled = false;
             dgvAlternativa.Enabled = true;
+            btnFinalizar.Enabled = true;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -121,6 +122,12 @@ namespace MVC.Telas
             cbxProf.SelectedItem = null;
             cmbTpQuestao.SelectedItem = null;
             lstQuestao.ClearSelected();
+            txtAlternativa.Clear();
+            pictureBox1.Image = null;
+            dgvAlternativa.ClearSelection();
+            rxtTextoAlternativa.Clear();
+            ckbAddAlter.Checked = false;
+            ckbCorreta.Checked = false;
         }
 
         private void llbImagem_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
