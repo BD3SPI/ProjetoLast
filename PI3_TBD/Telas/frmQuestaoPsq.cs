@@ -59,6 +59,11 @@ namespace MVC.Telas
             //lstAlternativas.ValueMember = "codigo";
             a.PreencherDataGridAlternativa(dgvAlternativa, txtAlternativa.Text);
             dgvAlternativa.Columns[1].Visible = false;
+            txtAlternativa.Text = lstQuestao.SelectedValue.ToString();
+            // exibi a imagem, relacionada com a questão.
+            Imagem.SelecionarImagem(lstQuestao.SelectedValue.ToString());
+            System.IO.MemoryStream stream = new System.IO.MemoryStream(Imagem.imagem);
+            pictureBox1.Image = Image.FromStream(stream);
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -67,6 +72,7 @@ namespace MVC.Telas
             btnRemover.Enabled = true;
             btnCancelar.Enabled = true;
             panBusca.Enabled = false;
+            dgvAlternativa.Enabled = true;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -83,6 +89,7 @@ namespace MVC.Telas
                 btnRemover.Enabled = false;
                 btnCancelar.Enabled = false;
                 panBusca.Enabled = true;
+                dgvAlternativa.Enabled = false;
             }
             
         }
@@ -127,6 +134,21 @@ namespace MVC.Telas
             }else{
                //alteração de questão sem nenhuma nova imagem selecionada
             }
+        }
+
+        private void btnAdicionar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmQuestaoPsq_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lstQuestao_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
