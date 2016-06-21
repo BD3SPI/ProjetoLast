@@ -72,6 +72,7 @@ namespace MVC.Telas
             btnRemover.Enabled = true;
             btnCancelar.Enabled = true;
             panBusca.Enabled = false;
+            dgvAlternativa.Enabled = true;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -88,6 +89,7 @@ namespace MVC.Telas
                 btnRemover.Enabled = false;
                 btnCancelar.Enabled = false;
                 panBusca.Enabled = true;
+                dgvAlternativa.Enabled = false;
             }
             
         }
@@ -132,6 +134,21 @@ namespace MVC.Telas
             }else{
                //alteração de questão sem nenhuma nova imagem selecionada
             }
+        }
+
+        private void btnAdicionar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmQuestaoPsq_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lstQuestao_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

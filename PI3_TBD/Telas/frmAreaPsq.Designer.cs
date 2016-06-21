@@ -30,9 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAreaPsq));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lstArea = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
-            this.lstArea = new System.Windows.Forms.ListBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.txtArea = new System.Windows.Forms.TextBox();
@@ -65,6 +65,17 @@
             this.panel1.Size = new System.Drawing.Size(390, 351);
             this.panel1.TabIndex = 0;
             // 
+            // lstArea
+            // 
+            this.lstArea.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstArea.FormattingEnabled = true;
+            this.lstArea.ItemHeight = 24;
+            this.lstArea.Location = new System.Drawing.Point(19, 89);
+            this.lstArea.Name = "lstArea";
+            this.lstArea.Size = new System.Drawing.Size(355, 220);
+            this.lstArea.TabIndex = 42;
+            this.lstArea.SelectedIndexChanged += new System.EventHandler(this.lstArea_SelectedIndexChanged);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -83,17 +94,6 @@
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(252, 27);
             this.txtCodigo.TabIndex = 43;
-            // 
-            // lstArea
-            // 
-            this.lstArea.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lstArea.FormattingEnabled = true;
-            this.lstArea.ItemHeight = 24;
-            this.lstArea.Location = new System.Drawing.Point(19, 89);
-            this.lstArea.Name = "lstArea";
-            this.lstArea.Size = new System.Drawing.Size(355, 220);
-            this.lstArea.TabIndex = 42;
-            this.lstArea.SelectedIndexChanged += new System.EventHandler(this.lstArea_SelectedIndexChanged);
             // 
             // btnCancelar
             // 
@@ -231,6 +231,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(414, 390);
+            this.ControlBox = false;
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
