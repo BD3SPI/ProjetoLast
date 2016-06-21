@@ -44,6 +44,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panAlterar = new System.Windows.Forms.Panel();
+            this.dgvAlternativa = new System.Windows.Forms.DataGridView();
             this.llbImagem = new System.Windows.Forms.LinkLabel();
             this.lblImagem = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -59,11 +60,10 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.ckbAddAlter = new System.Windows.Forms.CheckBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.dgvAlternativa = new System.Windows.Forms.DataGridView();
             this.panBusca.SuspendLayout();
             this.panAlterar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlternativa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panBusca
@@ -84,7 +84,7 @@
             this.panBusca.Controls.Add(this.label3);
             this.panBusca.Controls.Add(this.label2);
             this.panBusca.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panBusca.Location = new System.Drawing.Point(15, 16);
+            this.panBusca.Location = new System.Drawing.Point(15, 18);
             this.panBusca.Margin = new System.Windows.Forms.Padding(6);
             this.panBusca.Name = "panBusca";
             this.panBusca.Size = new System.Drawing.Size(489, 506);
@@ -125,6 +125,7 @@
             this.lstQuestao.Size = new System.Drawing.Size(472, 196);
             this.lstQuestao.TabIndex = 73;
             this.lstQuestao.Click += new System.EventHandler(this.lstQuestao_Click);
+            this.lstQuestao.SelectedIndexChanged += new System.EventHandler(this.lstQuestao_SelectedIndexChanged);
             // 
             // btnEditar
             // 
@@ -257,12 +258,20 @@
             this.panAlterar.Controls.Add(this.label8);
             this.panAlterar.Controls.Add(this.txtAlternativa);
             this.panAlterar.Controls.Add(this.label12);
-            this.panAlterar.Enabled = false;
             this.panAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panAlterar.Location = new System.Drawing.Point(513, 15);
             this.panAlterar.Name = "panAlterar";
-            this.panAlterar.Size = new System.Drawing.Size(570, 334);
+            this.panAlterar.Size = new System.Drawing.Size(570, 413);
             this.panAlterar.TabIndex = 10;
+            // 
+            // dgvAlternativa
+            // 
+            this.dgvAlternativa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAlternativa.Enabled = false;
+            this.dgvAlternativa.Location = new System.Drawing.Point(146, 253);
+            this.dgvAlternativa.Name = "dgvAlternativa";
+            this.dgvAlternativa.Size = new System.Drawing.Size(375, 157);
+            this.dgvAlternativa.TabIndex = 86;
             // 
             // llbImagem
             // 
@@ -338,7 +347,7 @@
             this.ckbCorreta.AutoSize = true;
             this.ckbCorreta.Enabled = false;
             this.ckbCorreta.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbCorreta.Location = new System.Drawing.Point(659, 445);
+            this.ckbCorreta.Location = new System.Drawing.Point(652, 524);
             this.ckbCorreta.Name = "ckbCorreta";
             this.ckbCorreta.Size = new System.Drawing.Size(90, 28);
             this.ckbCorreta.TabIndex = 84;
@@ -349,7 +358,7 @@
             // 
             this.rxtTextoAlternativa.Enabled = false;
             this.rxtTextoAlternativa.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rxtTextoAlternativa.Location = new System.Drawing.Point(659, 389);
+            this.rxtTextoAlternativa.Location = new System.Drawing.Point(652, 468);
             this.rxtTextoAlternativa.Name = "rxtTextoAlternativa";
             this.rxtTextoAlternativa.Size = new System.Drawing.Size(375, 50);
             this.rxtTextoAlternativa.TabIndex = 86;
@@ -360,7 +369,7 @@
             this.label1.AutoSize = true;
             this.label1.Enabled = false;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(543, 389);
+            this.label1.Location = new System.Drawing.Point(536, 468);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 24);
             this.label1.TabIndex = 85;
@@ -372,13 +381,14 @@
             this.btnAdicionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdicionar.Image = ((System.Drawing.Image)(resources.GetObject("btnAdicionar.Image")));
             this.btnAdicionar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdicionar.Location = new System.Drawing.Point(652, 475);
+            this.btnAdicionar.Location = new System.Drawing.Point(645, 554);
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(133, 44);
             this.btnAdicionar.TabIndex = 82;
             this.btnAdicionar.Text = "Adicionar";
             this.btnAdicionar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdicionar.UseVisualStyleBackColor = true;
+            this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
             // 
             // btnRemover
             // 
@@ -386,7 +396,7 @@
             this.btnRemover.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemover.Image = ((System.Drawing.Image)(resources.GetObject("btnRemover.Image")));
             this.btnRemover.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRemover.Location = new System.Drawing.Point(817, 475);
+            this.btnRemover.Location = new System.Drawing.Point(810, 554);
             this.btnRemover.Name = "btnRemover";
             this.btnRemover.Size = new System.Drawing.Size(133, 44);
             this.btnRemover.TabIndex = 83;
@@ -400,7 +410,7 @@
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(956, 475);
+            this.btnCancelar.Location = new System.Drawing.Point(949, 554);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(127, 44);
             this.btnCancelar.TabIndex = 87;
@@ -412,7 +422,7 @@
             // ckbAddAlter
             // 
             this.ckbAddAlter.AutoSize = true;
-            this.ckbAddAlter.Location = new System.Drawing.Point(659, 355);
+            this.ckbAddAlter.Location = new System.Drawing.Point(652, 434);
             this.ckbAddAlter.Name = "ckbAddAlter";
             this.ckbAddAlter.Size = new System.Drawing.Size(209, 28);
             this.ckbAddAlter.TabIndex = 88;
@@ -424,7 +434,7 @@
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(513, 475);
+            this.button2.Location = new System.Drawing.Point(506, 554);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(133, 44);
             this.button2.TabIndex = 90;
@@ -432,20 +442,12 @@
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // dgvAlternativa
-            // 
-            this.dgvAlternativa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAlternativa.Location = new System.Drawing.Point(146, 253);
-            this.dgvAlternativa.Name = "dgvAlternativa";
-            this.dgvAlternativa.Size = new System.Drawing.Size(375, 78);
-            this.dgvAlternativa.TabIndex = 86;
-            // 
             // frmQuestaoPsq
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1095, 536);
+            this.ClientSize = new System.Drawing.Size(1095, 610);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.ckbAddAlter);
             this.Controls.Add(this.btnCancelar);
@@ -464,12 +466,13 @@
             this.Name = "frmQuestaoPsq";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmQuestaoPsq";
+            this.Load += new System.EventHandler(this.frmQuestaoPsq_Load);
             this.panBusca.ResumeLayout(false);
             this.panBusca.PerformLayout();
             this.panAlterar.ResumeLayout(false);
             this.panAlterar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlternativa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

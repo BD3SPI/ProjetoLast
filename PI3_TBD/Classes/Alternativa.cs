@@ -60,6 +60,20 @@ namespace MVC.Classes
             this.contador = 3;
         }
 
+        public int novoIdAlternativas(string ultimoId)
+        {
+            string sql = "select max(codalternativa) from alternativa where codquestao  =" + ultimoId;
+            SqlConnection con = Conexao.AbrirConexao();
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandText = sql;
+            SqlDataReader rd = cmd.ExecuteReader();
+            int codigo;
+            codigo = rd.GetInt32(0);
+
+            return codigo;
+
+        }
+
 
         public void PreencherDataGridAlternativa(DataGridView tex, string id)
         {
