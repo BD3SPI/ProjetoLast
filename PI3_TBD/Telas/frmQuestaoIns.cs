@@ -117,62 +117,79 @@ namespace MVC.Telas
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int bit = 0;
-            if (contadorCorretas > 0)
+            try
             {
-                ckCorreta.Enabled = false;
+                int bit = 0;
+                if (contadorCorretas > 0)
+                {
+                    ckCorreta.Enabled = false;
+                }
+
+
+                if (ckCorreta.Checked == true)
+                {
+                    bit = 1;
+                }
+
+                if (cmbTpQuestao.SelectedValue.Equals("A"))
+                {
+                    Alternativa alternativa = new Alternativa();
+                    alternativa.contador = contadorAlternativas;
+                    alternativa.correta = bit;
+                    alternativa.texto = txtAlternativa.Text;
+                    alternativa.codquestao = codQuestao;
+                    // validando se já possui alternativa verdadeira.
+                    if (alternativa.ValidarAlternativaCorreta(alternativa.codquestao) >= 1 && ckCorreta.Checked == true)
+                    {
+
+                        throw new JaPossuiAlternativacorretaException();
+
+
+                    }
+                    alternativa.insertTpAlternativas();
+                    contadorAlternativas++;
+                    MessageBox.Show("Alternativa cadastrada com sucesso");
+                    alternativa.PreencherDataGridAlternativa(dataGridView1, codQuestao);
+                    ckCorreta.Checked = false;
+                }
+
+                if (cmbTpQuestao.SelectedValue.Equals("V"))
+                {
+
+                    ckCorreta.Checked = true;
+                    bit = 1;
+                    Alternativa alternativa = new Alternativa();
+                    alternativa.contador = contadorAlternativas;
+                    alternativa.correta = bit;
+                    alternativa.codquestao = codQuestao;
+                    alternativa.insereVouF();
+                    MessageBox.Show("Alternativa cadastrada com sucesso");
+                    alternativa.PreencherDataGridAlternativa(dataGridView1, codQuestao);
+                    ckCorreta.Checked = false;
+                }
+
+                if (cmbTpQuestao.SelectedValue.Equals("T"))
+                {
+                    ckCorreta.Checked = true;
+                    ckCorreta.Enabled = false;
+                    Alternativa alternativa = new Alternativa();
+                    alternativa.contador = contadorAlternativas;
+                    alternativa.correta = bit;
+                    alternativa.texto = txtAlternativa.Text;
+                    alternativa.codquestao = codQuestao;
+                    alternativa.insertTpAlternativas();
+                    contadorAlternativas++;
+                    MessageBox.Show("Alternativa cadastrada com sucesso");
+                    alternativa.PreencherDataGridAlternativa(dataGridView1, codQuestao);
+                    //              dataGridView1.Columns[1].Visible = false;
+
+                }
             }
 
-
-            if (ckCorreta.Checked == true)
+              catch (JaPossuiAlternativacorretaException)
             {
-                bit = 1;
-            }
-
-            if (cmbTpQuestao.SelectedValue.Equals("A") )
-            {
-                Alternativa alternativa = new Alternativa();
-                alternativa.contador = contadorAlternativas;
-                alternativa.correta = bit;
-                alternativa.texto = txtAlternativa.Text;
-                alternativa.codquestao = codQuestao;
-                alternativa.insertTpAlternativas();
-                contadorAlternativas++;
-                MessageBox.Show("Alternativa cadastrada com sucesso");
-                alternativa.PreencherDataGridAlternativa(dataGridView1, codQuestao);
+                MessageBox.Show("Já existe uma alternativa correta vinculada para essa questão");
                 ckCorreta.Checked = false;
-            }
-            
-            if (cmbTpQuestao.SelectedValue.Equals("V") )
-            {
-                
-                ckCorreta.Checked = true;
-                bit = 1;
-                Alternativa alternativa = new Alternativa();
-                alternativa.contador = contadorAlternativas;
-                alternativa.correta = bit;
-                alternativa.codquestao = codQuestao;
-                alternativa.insereVouF();
-                MessageBox.Show("Alternativa cadastrada com sucesso");
-                alternativa.PreencherDataGridAlternativa(dataGridView1, codQuestao);
-                ckCorreta.Checked = false;
-            }
-
-            if (cmbTpQuestao.SelectedValue.Equals("T"))
-            {
-                ckCorreta.Checked = true;
-                ckCorreta.Enabled = false;
-                Alternativa alternativa = new Alternativa();
-                alternativa.contador = contadorAlternativas;
-                alternativa.correta = bit;
-                alternativa.texto = txtAlternativa.Text;
-                alternativa.codquestao = codQuestao;
-                alternativa.insertTpAlternativas();
-                contadorAlternativas++;
-                MessageBox.Show("Alternativa cadastrada com sucesso");
-                alternativa.PreencherDataGridAlternativa(dataGridView1, codQuestao);
-//              dataGridView1.Columns[1].Visible = false;
-                
             }
 
            
