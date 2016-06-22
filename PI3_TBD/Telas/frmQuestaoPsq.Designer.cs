@@ -269,7 +269,7 @@
             this.dgvAlternativa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAlternativa.Location = new System.Drawing.Point(146, 253);
             this.dgvAlternativa.Name = "dgvAlternativa";
-            this.dgvAlternativa.Size = new System.Drawing.Size(375, 78);
+            this.dgvAlternativa.Size = new System.Drawing.Size(375, 157);
             this.dgvAlternativa.TabIndex = 86;
             // 
             // llbImagem

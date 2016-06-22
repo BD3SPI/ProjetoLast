@@ -44,7 +44,7 @@ namespace MVC.Telas
                 lstQuestao.DisplayMember = "textoQuestao";
                 lstQuestao.ValueMember = "codQuestao";
             }
-             catch (Exception)
+            catch (Exception)
             {
                 MessageBox.Show("Por favor selecione os filtros");
             }
@@ -61,9 +61,9 @@ namespace MVC.Telas
             dgvAlternativa.Columns[1].Visible = false;
             txtAlternativa.Text = lstQuestao.SelectedValue.ToString();
             // exibi a imagem, relacionada com a questão.
-            Imagem.SelecionarImagem(lstQuestao.SelectedValue.ToString());
-            System.IO.MemoryStream stream = new System.IO.MemoryStream(Imagem.imagem);
-            pictureBox1.Image = Image.FromStream(stream);
+            //   Imagem.SelecionarImagem(lstQuestao.SelectedValue.ToString());
+            //  System.IO.MemoryStream stream = new System.IO.MemoryStream(Imagem.imagem);
+            //   pictureBox1.Image = Image.FromStream(stream);
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -84,14 +84,15 @@ namespace MVC.Telas
                 btnAdicionar.Enabled = false;
                 ckbAddAlter.Checked = false;
             }
-            else {
+            else
+            {
                 panAlterar.Enabled = false;
                 btnRemover.Enabled = false;
                 btnCancelar.Enabled = false;
                 panBusca.Enabled = true;
                 dgvAlternativa.Enabled = false;
             }
-            
+
         }
 
         private void ckbAddAlter_CheckedChanged(object sender, EventArgs e)
@@ -128,16 +129,63 @@ namespace MVC.Telas
             frmImagem frimagem = new frmImagem();
             frimagem.ShowDialog();
 
-            if (frmImagem.imagemSelecionada) { 
-               //alteração de questão com a nova imagem selecionada
-                
-            }else{
-               //alteração de questão sem nenhuma nova imagem selecionada
+            if (frmImagem.imagemSelecionada)
+            {
+                //alteração de questão com a nova imagem selecionada
+
+            }
+            else
+            {
+                //alteração de questão sem nenhuma nova imagem selecionada
             }
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
+            Alternativa alt = new Alternativa();
+            int codalternativa = Alternativa.novoIdAlternativas(txtAlternativa.Text);
+            codalternativa++;
+            if (cmbTpQuestao.SelectedValue.Equals("A"))
+            {
+                alt.codigo = codalternativa.ToString();
+                alt.texto = rxtTextoAlternativa.Text;
+                alt.codquestao = txtAlternativa.Text;
+                if (ckbCorreta.Checked == true)
+                {
+                    alt.correta = 1;
+                }
+                else
+                {
+                    alt.correta = 0;
+                }
+                if (alt.ValidarAlternativaCorreta(alt.codquestao) >= 1 && ckbCorreta.Checked == true)
+                {
+                    MessageBox.Show("Já possui alternativa correta");
+                    //throw new JaPossuiAlternativacorretaException();
+                }
+                else
+                {
+                    alt.insertTpAlternativas2();
+                    MessageBox.Show("Alternativa Adicionada");
+                }
+            }
+            if (cmbTpQuestao.SelectedValue.Equals("T"))
+            {
+                alt.codigo = codalternativa.ToString();
+                alt.texto = rxtTextoAlternativa.Text;
+                alt.codquestao = txtAlternativa.Text;
+                if (ckbCorreta.Checked == true)
+                {
+                    alt.correta = 1;
+                }
+                else
+                {
+                    alt.correta = 0;
+                }
+                alt.insertTpAlternativas2();
+                MessageBox.Show("Alternativa Adicionada");
+            }
+
 
         }
 
@@ -148,7 +196,7 @@ namespace MVC.Telas
 
         private void lstQuestao_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
     }
 }

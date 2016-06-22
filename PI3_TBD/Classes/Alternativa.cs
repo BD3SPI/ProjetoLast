@@ -35,6 +35,23 @@ namespace MVC.Classes
             con.Close();
             con.Dispose();
         }
+        public void insertTpAlternativas2()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("INSERT INTO alternativa(codquestao,codalternativa,textoalternativa,correta) VALUES(@codquestao,@codalternativa,@textoalternativa,@correta)");
+
+            SqlConnection con = Conexao.AbrirConexao();
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandText = sb.ToString();
+            cmd.Parameters.AddWithValue("@codquestao", SqlDbType.Int).Value = this.codquestao;
+            cmd.Parameters.AddWithValue("@codalternativa", SqlDbType.Int).Value = this.codigo;
+            cmd.Parameters.AddWithValue("@textoalternativa", SqlDbType.VarChar).Value = this.texto;
+            cmd.Parameters.AddWithValue("@correta", SqlDbType.Bit).Value = this.correta;
+
+            cmd.ExecuteNonQuery();
+            con.Close();
+            con.Dispose();
+        }
 
 
         public int ValidarAlternativaCorreta(string id)
@@ -57,7 +74,7 @@ namespace MVC.Classes
 
             dr.Close();
             dr.Dispose();
-        } 
+        }
 
         public void insereVouF()
         {
@@ -83,15 +100,19 @@ namespace MVC.Classes
             this.contador = 3;
         }
 
-        public int novoIdAlternativas(string ultimoId)
+        public static Int32 novoIdAlternativas(string codquestao)
         {
-            string sql = "select max(codalternativa) from alternativa where codquestao  =" + ultimoId;
+            string sql = "select count(codalternativa) from alternativa where codquestao  =" + codquestao;
             SqlConnection con = Conexao.AbrirConexao();
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandText = sql;
-            SqlDataReader rd = cmd.ExecuteReader();
-            int codigo;
-            codigo = rd.GetInt32(0);
+            //SqlDataReader rd = cmd.ExecuteReader();
+            Int32 codigo = 0;
+
+
+            codigo = (Int32)cmd.ExecuteScalar();
+
+
 
             return codigo;
 
