@@ -142,7 +142,6 @@ namespace MVC
                 tspTipo.Text = null;
                 //desativar permissões
                 button1.Enabled = false;
-
             }
 
 
@@ -163,8 +162,6 @@ namespace MVC
                 btnAreasP.Enabled = false;
                 btnEventosP.Enabled = false;
                 btnProfessoresP.Enabled = false;
-
-
             }
         }
 

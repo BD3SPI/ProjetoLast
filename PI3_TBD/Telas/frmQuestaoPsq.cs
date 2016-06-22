@@ -14,6 +14,7 @@ namespace MVC.Telas
 {
     public partial class frmQuestaoPsq : Form
     {
+        string txtAlternativa;
         public frmQuestaoPsq()
         {
             InitializeComponent();
@@ -53,35 +54,32 @@ namespace MVC.Telas
         private void lstQuestao_Click(object sender, EventArgs e)
         {
            
-           
-                txtAlternativa.Text = lstQuestao.SelectedValue.ToString();
+                txtAlternativa = lstQuestao.SelectedValue.ToString();
                 txtquestao.Text = lstQuestao.SelectedItem.ToString();
                 Alternativa a = new Alternativa();
                 //lstAlternativas.DataSource = a.listarAlternativa(txtAlternativa.Text);
                 //lstAlternativas.DisplayMember = "texto";
                 //lstAlternativas.ValueMember = "codigo";
-                a.PreencherDataGridAlternativa(dgvAlternativa, txtAlternativa.Text);
+                a.PreencherDataGridAlternativa(dgvAlternativa, txtAlternativa);
                 dgvAlternativa.Columns[1].Visible = false;
-                txtAlternativa.Text = lstQuestao.SelectedValue.ToString();
-            // exibi a imagem, relacionada com a questão.
-            pictureBox1.Image = null;
+                txtAlternativa = lstQuestao.SelectedValue.ToString();
+                // exibi a imagem, relacionada com a questão.
+                pictureBox1.Image = null;
+
                 Imagem.SelecionarImagem(lstQuestao.SelectedValue.ToString());
-            if (Imagem.imagem == null)
-            {
-                llbImagem.Visible = true;
-                btnCadastrarimagem.Enabled = true;
+                if (Imagem.imagem == null)
+                {
+                    lblImagem.Visible = true;
+                    llbImagem.Visible = true;
+                }
+                else
+                {
+                    System.IO.MemoryStream stream = new System.IO.MemoryStream(Imagem.imagem);
+                    pictureBox1.Image = Image.FromStream(stream);
+                    Imagem.imagem = null;
+                }
 
-            }
-            else
-            {
-                llbImagem.Visible = false;
-                btnCadastrarimagem.Enabled = false;
-                System.IO.MemoryStream stream = new System.IO.MemoryStream(Imagem.imagem);
-                pictureBox1.Image = Image.FromStream(stream);
-                Imagem.imagem = null;
-            }
-
-            }
+        }
    
         
 
@@ -142,25 +140,21 @@ namespace MVC.Telas
             cbxProf.SelectedItem = null;
             cmbTpQuestao.SelectedItem = null;
             lstQuestao.ClearSelected();
-            txtAlternativa.Clear();
             pictureBox1.Image = null;
-            dgvAlternativa.ClearSelection();
             rxtTextoAlternativa.Clear();
             ckbAddAlter.Checked = false;
             ckbCorreta.Checked = false;
+            txtquestao.Clear();
+            this.dgvAlternativa.DataSource = null;
         }
 
         private void llbImagem_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             frmImagem frimagem = new frmImagem();
             frimagem.ShowDialog();
+            btnCadastrarimagem.Visible = true;
+            btnCadastrarimagem.Enabled = true;
 
-            if (frmImagem.imagemSelecionada) { 
-               //alteração de questão com a nova imagem selecionada
-                
-            }else{
-               //alteração de questão sem nenhuma nova imagem selecionada
-            }
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e)
@@ -192,7 +186,7 @@ namespace MVC.Telas
         {
             Questao q = new Questao();
 
-            q.Alterarimagem(txtAlternativa.Text);
+            q.Alterarimagem(txtAlternativa);
             MessageBox.Show("Foto cadastrada com sucesso");
         }
     }
