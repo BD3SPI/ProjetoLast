@@ -238,7 +238,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmAreaPsq";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pesquisa de Área";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

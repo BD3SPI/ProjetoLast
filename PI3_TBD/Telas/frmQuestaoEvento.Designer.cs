@@ -194,7 +194,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmQuestaoEvento";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Questões por Evento";
             this.Load += new System.EventHandler(this.frmQuestaoEvento_Load_1);
             this.panel1.ResumeLayout(false);

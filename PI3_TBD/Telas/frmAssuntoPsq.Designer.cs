@@ -270,7 +270,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmAssuntoPsq";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pesquisa de Assunto";
             this.Load += new System.EventHandler(this.frmAssuntoPsq_Load);
             this.panel1.ResumeLayout(false);

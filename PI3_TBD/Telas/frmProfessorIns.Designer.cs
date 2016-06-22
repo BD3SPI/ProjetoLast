@@ -235,7 +235,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmProfessorIns";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro Professor";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
