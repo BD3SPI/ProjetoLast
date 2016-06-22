@@ -33,6 +33,8 @@ namespace MVC.Telas
         {
             lstArea.DataSource = Area.ListaArea("limpo");
             Limpar();
+            txtArea.ReadOnly = false;
+            txtCodigo.ReadOnly = false;
         }
 
         private void btnBusca_Click(object sender, EventArgs e)
@@ -40,14 +42,18 @@ namespace MVC.Telas
             if (txtArea != null)
             {
                 lstArea.DataSource = Area.ListaArea(txtArea.Text.ToString());
-                btnEditar.Enabled = true;
-                btnExcluir.Enabled = true;
             }
 
         }
 
         private void lstArea_SelectedIndexChanged(object sender, EventArgs e)
         {
+            btnEditar.Enabled = true;
+            btnExcluir.Enabled = true;
+
+            txtArea.ReadOnly = true;
+            txtCodigo.ReadOnly = true;
+
             Area area = new Area();
 
             area = area.preencherCampos(lstArea.SelectedValue.ToString());
@@ -107,6 +113,7 @@ namespace MVC.Telas
             label2.Enabled = true;
             txtCodigo.Enabled = false;
             txtArea.Visible = true;
+            txtArea.ReadOnly = false;
             lstArea.Visible = false;
             btnConfirmar.Visible = true;
             btnCancelar.Visible = true;

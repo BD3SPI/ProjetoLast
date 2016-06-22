@@ -50,7 +50,6 @@
             this.txtNome = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.novaPesquisaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.gbTipo.SuspendLayout();
@@ -101,9 +100,9 @@
             this.lstProfessores.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstProfessores.FormattingEnabled = true;
             this.lstProfessores.ItemHeight = 24;
-            this.lstProfessores.Location = new System.Drawing.Point(99, 223);
+            this.lstProfessores.Location = new System.Drawing.Point(99, 189);
             this.lstProfessores.Name = "lstProfessores";
-            this.lstProfessores.Size = new System.Drawing.Size(355, 148);
+            this.lstProfessores.Size = new System.Drawing.Size(356, 220);
             this.lstProfessores.TabIndex = 27;
             this.lstProfessores.SelectedIndexChanged += new System.EventHandler(this.lstProfessores_SelectedIndexChanged);
             // 
@@ -138,7 +137,7 @@
             this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExcluir.Image = ((System.Drawing.Image)(resources.GetObject("btnExcluir.Image")));
             this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcluir.Location = new System.Drawing.Point(278, 431);
+            this.btnExcluir.Location = new System.Drawing.Point(283, 426);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(88, 29);
             this.btnExcluir.TabIndex = 24;
@@ -186,7 +185,7 @@
             this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
             this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditar.Location = new System.Drawing.Point(186, 431);
+            this.btnEditar.Location = new System.Drawing.Point(191, 426);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(88, 29);
             this.btnEditar.TabIndex = 20;
@@ -241,7 +240,7 @@
             this.btnLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpar.Image = ((System.Drawing.Image)(resources.GetObject("btnLimpar.Image")));
             this.btnLimpar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLimpar.Location = new System.Drawing.Point(367, 431);
+            this.btnLimpar.Location = new System.Drawing.Point(372, 426);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(88, 29);
             this.btnLimpar.TabIndex = 15;
@@ -256,7 +255,7 @@
             this.btnBusca.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBusca.Image = ((System.Drawing.Image)(resources.GetObject("btnBusca.Image")));
             this.btnBusca.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBusca.Location = new System.Drawing.Point(77, 431);
+            this.btnBusca.Location = new System.Drawing.Point(82, 426);
             this.btnBusca.Name = "btnBusca";
             this.btnBusca.Size = new System.Drawing.Size(108, 29);
             this.btnBusca.TabIndex = 14;
@@ -330,20 +329,12 @@
             this.menuStrip1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.menuStrip1.Font = new System.Drawing.Font("Tahoma", 13F);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.novaPesquisaToolStripMenuItem,
             this.sairToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(572, 30);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // novaPesquisaToolStripMenuItem
-            // 
-            this.novaPesquisaToolStripMenuItem.Name = "novaPesquisaToolStripMenuItem";
-            this.novaPesquisaToolStripMenuItem.Size = new System.Drawing.Size(136, 26);
-            this.novaPesquisaToolStripMenuItem.Text = "Nova Pesquisa";
-            this.novaPesquisaToolStripMenuItem.Click += new System.EventHandler(this.novaPesquisaToolStripMenuItem_Click);
             // 
             // sairToolStripMenuItem
             // 
@@ -396,7 +387,6 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem novaPesquisaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
         private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.Label label5;

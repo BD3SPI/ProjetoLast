@@ -36,10 +36,8 @@
             this.txtTitulo = new System.Windows.Forms.TextBox();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.txtCodImagem = new System.Windows.Forms.TextBox();
-            this.picImagem1 = new System.Windows.Forms.PictureBox();
             this.btnSalvar2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picImagem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picImagem1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnProcurar
@@ -68,29 +66,29 @@
             // 
             // picImagem2
             // 
-            this.picImagem2.Location = new System.Drawing.Point(112, 100);
+            this.picImagem2.Location = new System.Drawing.Point(98, 62);
             this.picImagem2.Margin = new System.Windows.Forms.Padding(6);
             this.picImagem2.Name = "picImagem2";
-            this.picImagem2.Size = new System.Drawing.Size(331, 262);
+            this.picImagem2.Size = new System.Drawing.Size(381, 300);
             this.picImagem2.TabIndex = 8;
             this.picImagem2.TabStop = false;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(125, 377);
+            this.label5.Location = new System.Drawing.Point(15, 377);
             this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(56, 24);
+            this.label5.Size = new System.Drawing.Size(61, 24);
             this.label5.TabIndex = 9;
-            this.label5.Text = "Título";
+            this.label5.Text = "Título:";
             // 
             // txtTitulo
             // 
-            this.txtTitulo.Location = new System.Drawing.Point(243, 374);
+            this.txtTitulo.Location = new System.Drawing.Point(98, 374);
             this.txtTitulo.Margin = new System.Windows.Forms.Padding(6);
             this.txtTitulo.Name = "txtTitulo";
-            this.txtTitulo.Size = new System.Drawing.Size(180, 29);
+            this.txtTitulo.Size = new System.Drawing.Size(381, 29);
             this.txtTitulo.TabIndex = 11;
             // 
             // btnSalvar
@@ -113,21 +111,11 @@
             this.txtCodImagem.Size = new System.Drawing.Size(300, 29);
             this.txtCodImagem.TabIndex = 3;
             // 
-            // picImagem1
-            // 
-            this.picImagem1.Location = new System.Drawing.Point(72, 74);
-            this.picImagem1.Margin = new System.Windows.Forms.Padding(6);
-            this.picImagem1.Name = "picImagem1";
-            this.picImagem1.Size = new System.Drawing.Size(420, 334);
-            this.picImagem1.TabIndex = 4;
-            this.picImagem1.TabStop = false;
-            this.picImagem1.Visible = false;
-            // 
             // btnSalvar2
             // 
             this.btnSalvar2.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar2.Image")));
             this.btnSalvar2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalvar2.Location = new System.Drawing.Point(392, 415);
+            this.btnSalvar2.Location = new System.Drawing.Point(461, 415);
             this.btnSalvar2.Margin = new System.Windows.Forms.Padding(6);
             this.btnSalvar2.Name = "btnSalvar2";
             this.btnSalvar2.Size = new System.Drawing.Size(100, 42);
@@ -151,7 +139,6 @@
             this.Controls.Add(this.btnSalvar2);
             this.Controls.Add(this.txtCodImagem);
             this.Controls.Add(this.picImagem2);
-            this.Controls.Add(this.picImagem1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(6);
@@ -160,7 +147,6 @@
             this.Text = "Gravar Imagem";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picImagem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picImagem1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -175,7 +161,6 @@
         private System.Windows.Forms.TextBox txtTitulo;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.TextBox txtCodImagem;
-        private System.Windows.Forms.PictureBox picImagem1;
         private System.Windows.Forms.Button btnSalvar2;
     }
 }

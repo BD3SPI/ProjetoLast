@@ -99,8 +99,7 @@
             this.txtcodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtcodigo.Location = new System.Drawing.Point(109, 82);
             this.txtcodigo.Name = "txtcodigo";
-            this.txtcodigo.ReadOnly = true;
-            this.txtcodigo.Size = new System.Drawing.Size(248, 29);
+            this.txtcodigo.Size = new System.Drawing.Size(257, 29);
             this.txtcodigo.TabIndex = 40;
             // 
             // btnExcluir
@@ -191,7 +190,6 @@
             this.txtAssunto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAssunto.Location = new System.Drawing.Point(109, 9);
             this.txtAssunto.Name = "txtAssunto";
-            this.txtAssunto.ReadOnly = true;
             this.txtAssunto.Size = new System.Drawing.Size(257, 29);
             this.txtAssunto.TabIndex = 29;
             // 

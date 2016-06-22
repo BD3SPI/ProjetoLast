@@ -32,7 +32,6 @@ namespace MVC.Telas
         {
             if (cbxArea.SelectedValue != null)
             {
-
                 Assunto a = new Assunto();
                 //Professor p = new Professor();
                 lstAssunto.DataSource = Assunto.listadescricaoAssunto(cbxArea.SelectedValue.ToString());
@@ -74,6 +73,10 @@ namespace MVC.Telas
 
         private void lstAssunto_SelectedIndexChanged(object sender, EventArgs e)
         {
+            txtAssunto.ReadOnly = true;
+            txtcodigo.ReadOnly = true;
+            cbxArea.Enabled = false;
+
             Assunto assunto = new Assunto();
 
             assunto = assunto.preencherCampos(lstAssunto.SelectedItem.ToString());
@@ -82,7 +85,6 @@ namespace MVC.Telas
             cbxArea.Text = assunto.area.codarea;
 
             btnEditar.Enabled = true;
-            cbxArea.Enabled = true;
             btnExcluir.Enabled = true;
         }
 
@@ -124,6 +126,10 @@ namespace MVC.Telas
         {
             Limpar();
             lstAssunto.DataSource = Assunto.listadescricaoAssunto(Convert.ToString(0));
+
+            txtAssunto.ReadOnly = false;
+            txtcodigo.ReadOnly = false;
+            cbxArea.Enabled = true;
         }
 
         private void btnConfirmar_Click(object sender, EventArgs e)

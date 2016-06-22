@@ -74,6 +74,8 @@ namespace MVC.Telas
                 }
                 else
                 {
+                    lblImagem.Visible = false;
+                    llbImagem.Visible = false;
                     System.IO.MemoryStream stream = new System.IO.MemoryStream(Imagem.imagem);
                     pictureBox1.Image = Image.FromStream(stream);
                     Imagem.imagem = null;
@@ -85,13 +87,21 @@ namespace MVC.Telas
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            panAlterar.Enabled = true;
-            btnRemover.Enabled = true;
-            btnCancelar.Enabled = true;
-            panBusca.Enabled = false;
-            dgvAlternativa.Enabled = true;
-            btnCadastrarimagem.Enabled = true;
-            btnFinalizar.Enabled = true;
+            if (lstQuestao.SelectedItem == null)
+            {
+                MessageBox.Show("Por gentileza, selecione uma questão");
+            }
+            else
+            {
+                panAlterar.Enabled = true;
+                btnRemover.Enabled = true;
+                btnCancelar.Enabled = true;
+                panBusca.Enabled = false;
+                dgvAlternativa.Enabled = true;
+                btnCadastrarimagem.Enabled = true;
+                btnFinalizar.Enabled = true;
+            }
+
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

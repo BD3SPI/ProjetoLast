@@ -36,6 +36,15 @@ namespace MVC.Telas
         {
             Limpar();
             lstProfessores.DataSource = Professor.listaNomeProfessor("limpo");
+            
+            txtEmail.ReadOnly = false;
+            txtIdSenac.ReadOnly = false;
+            txtNome.ReadOnly = false;
+            txtIdSenac.ReadOnly = false;
+            txtCodProfessor.ReadOnly = false;
+            txtSenha.ReadOnly = false;
+
+
         }
 
         private void btnBusca_Click(object sender, EventArgs e)
@@ -45,10 +54,12 @@ namespace MVC.Telas
             {
                 Professor p = new Professor();
                 lstProfessores.DataSource = Professor.listaNomeProfessor(txtNome.Text.ToString());
+
             }
-
-
-
+            else
+            {
+                MessageBox.Show("Por gentileza, entre com um nome a ser pesquisado");
+            }
 
         }
 
@@ -187,9 +198,9 @@ namespace MVC.Telas
         private void lsvResultado_SelectedIndexChanged(object sender, EventArgs e)
         {
             //Bloqueia os campos
-            txtNome.Enabled = false;
-            txtEmail.Enabled = false;
-            txtIdSenac.Enabled = false;
+            txtNome.ReadOnly = false;
+            txtEmail.ReadOnly = false;
+            txtIdSenac.ReadOnly = false;
             //txtCodProfessor.Enabled = false;
             gbTipo.Visible = true;
             gbTipo.Enabled = false;
@@ -228,6 +239,13 @@ namespace MVC.Telas
 
         private void lstProfessores_SelectedIndexChanged(object sender, EventArgs e)
         {
+            txtEmail.ReadOnly = true;
+            txtIdSenac.ReadOnly = true;
+            txtNome.ReadOnly = true;
+            txtIdSenac.ReadOnly = true;
+            txtCodProfessor.ReadOnly = true;
+            txtSenha.ReadOnly = true;
+
             Professor p = new Professor();
             p = p.preencherCampos(lstProfessores.SelectedItem.ToString());
             txtCodProfessor.Text = p.codigo;
