@@ -43,7 +43,7 @@ namespace MVC.Classes
 
             SqlConnection con = Conexao.AbrirConexao();
             SqlCommand cmd = con.CreateCommand();
-            cmd.CommandText = sb.ToString(); 
+            cmd.CommandText = sb.ToString();
             cmd.Parameters.AddWithValue("@TEXTO", SqlDbType.VarChar).Value = this.textoQuestao;
             cmd.Parameters.AddWithValue("@CODASSUNTO", SqlDbType.Int).Value = this.assunto.codigo;
             cmd.Parameters.AddWithValue("@CODTIPOQUESTAO", SqlDbType.Char).Value = this.tipoQuestao.codTipoQuestao;
@@ -258,9 +258,9 @@ namespace MVC.Classes
                 cmd.Parameters.Add("@CODTIPOQUESTAO", SqlDbType.Char).Value = this.tipoQuestao.codTipoQuestao;
                 cmd.Parameters.Add("@ativo", SqlDbType.Char, 1).Value = this.ativo;
                 cmd.Parameters.Add("@DIFICULDADE", SqlDbType.Char, 1).Value = this.dificuldade;
-                
+
                 cmd.ExecuteNonQuery();
-          
+
 
                 con.Close();
 
@@ -354,8 +354,24 @@ namespace MVC.Classes
                 throw ex;
 
             }
+        }
 
+        public static void Excluir(string codquestao)
+        {
+            try
+            {
+                string sql1 = "DELETE FROM alternativa where codquestao =" + codquestao;
+                string sql = "DELETE FROM questao where codquestao =" + codquestao;
+                SqlConnection con = Conexao.AbrirConexao();
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandText = sql1 + sql;
 
+                cmd.ExecuteNonQuery();
+            }
+            catch (ArgumentException)
+            {
+                MessageBox.Show("Falha na exclusão");
+            }
 
 
         }
