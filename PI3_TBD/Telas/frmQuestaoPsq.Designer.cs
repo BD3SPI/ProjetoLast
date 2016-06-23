@@ -104,7 +104,6 @@
             // btnExcluir
             // 
             this.btnExcluir.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnExcluir.Enabled = false;
             this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExcluir.Image = ((System.Drawing.Image)(resources.GetObject("btnExcluir.Image")));
             this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -115,6 +114,7 @@
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnExcluir.UseVisualStyleBackColor = false;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // lstQuestao
             // 
@@ -403,6 +403,7 @@
             this.btnRemover.Text = "Remover";
             this.btnRemover.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRemover.UseVisualStyleBackColor = true;
+            this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
             // 
             // btnCancelar
             // 
@@ -432,6 +433,7 @@
             // 
             // btnFinalizar
             // 
+            this.btnFinalizar.Enabled = false;
             this.btnFinalizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFinalizar.Image = ((System.Drawing.Image)(resources.GetObject("btnFinalizar.Image")));
             this.btnFinalizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -442,6 +444,7 @@
             this.btnFinalizar.Text = "Finalizar";
             this.btnFinalizar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnFinalizar.UseVisualStyleBackColor = true;
+            this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
             // 
             // frmQuestaoPsq
             // 

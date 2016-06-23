@@ -60,6 +60,8 @@ namespace MVC.Telas
                 else
                 {
                     bit = 0;
+
+                    
                 }
 
                 if (cckImagem.Checked)

@@ -62,5 +62,23 @@ namespace MVC.Classes
                 MessageBox.Show("Erro ao mandar o comando SQL para o Banco de dados");
             }
         }
+
+        public static bool verificaDependecia(string codquestao)
+        {
+            string sql = "select count(*) from alternativa where codquestao =" + codquestao;
+            SqlConnection con = Conexao.AbrirConexao();
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandText = sql;
+            //SqlDataReader rd = cmd.ExecuteReader();
+            Int32 codigo = 0;
+            codigo = (Int32)cmd.ExecuteScalar();
+
+            if (codigo > 0)
+
+                return true;
+
+            else
+                return false;
+        }
     }
 }

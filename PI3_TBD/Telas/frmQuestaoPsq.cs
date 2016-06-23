@@ -61,13 +61,21 @@ namespace MVC.Telas
             dgvAlternativa.Columns[1].Visible = false;
             txtAlternativa.Text = lstQuestao.SelectedValue.ToString();
             // exibi a imagem, relacionada com a questão.
-            //   Imagem.SelecionarImagem(lstQuestao.SelectedValue.ToString());
-            //  System.IO.MemoryStream stream = new System.IO.MemoryStream(Imagem.imagem);
-            //   pictureBox1.Image = Image.FromStream(stream);
+            try
+            {
+                Imagem.SelecionarImagem(lstQuestao.SelectedValue.ToString());
+                System.IO.MemoryStream stream = new System.IO.MemoryStream(Imagem.imagem);
+                pictureBox1.Image = Image.FromStream(stream);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Problemas ao carregar imagens do banco...", "Aviso");
+            }
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            btnExcluir.Enabled = true;
             panAlterar.Enabled = true;
             btnRemover.Enabled = true;
             btnCancelar.Enabled = true;
@@ -83,6 +91,7 @@ namespace MVC.Telas
                 ckbCorreta.Enabled = false;
                 btnAdicionar.Enabled = false;
                 ckbAddAlter.Checked = false;
+                btnExcluir.Enabled = false;
             }
             else
             {
@@ -122,6 +131,16 @@ namespace MVC.Telas
             cbxProf.SelectedItem = null;
             cmbTpQuestao.SelectedItem = null;
             lstQuestao.ClearSelected();
+            lstQuestao.DataSource = null;
+            lstQuestao.Items.Clear();
+            txtAlternativa.Clear();
+            lstQuestao.DataSource = null;
+            lstQuestao.Items.Clear();
+            dgvAlternativa.DataSource = null;
+            dgvAlternativa.Rows.Clear();
+            pictureBox1 = null;
+
+            
         }
 
         private void llbImagem_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -197,6 +216,79 @@ namespace MVC.Telas
         private void lstQuestao_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnRemover_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Tem certeza que deseja excluir a Alternativa?", "Confirmação", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                string codigo = Convert.ToString(dgvAlternativa.CurrentRow.Cells[1].Value.ToString());
+                Alternativa.Excluir(codigo);
+                Alternativa a = new Alternativa();
+                a.PreencherDataGridAlternativa(dgvAlternativa, txtAlternativa.Text);
+                dgvAlternativa.Columns[1].Visible = false;
+
+
+            }
+
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            bool verifica = Questao.verificaDependecia(txtAlternativa.Text);
+
+            if (verifica.Equals(true))
+            {
+                MessageBox.Show("Impossível apagar, essa questão está associada um evento !!! ", "Aviso ");
+            }
+            else
+            {
+                if (MessageBox.Show("Tem certeza que deseja excluir a questão?", "Confirmação", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    verifica = Questao.verificaDependecia(txtAlternativa.Text);
+                    if (verifica.Equals(true))
+                    {
+                        MessageBox.Show("Existem dependentes");
+
+                    }
+                    else if (verifica.Equals(false))
+                    {
+                        Questao.Excluir(txtAlternativa.Text);
+                        Alternativa a = new Alternativa();
+                        Questao q = new Questao();
+                        lstQuestao.DataSource = null;
+                        lstQuestao.Items.Clear();
+                        dgvAlternativa.DataSource = null;
+                        dgvAlternativa.Rows.Clear();
+                    }
+
+                }
+            }
+
+        }
+
+        private void btnFinalizar_Click(object sender, EventArgs e)
+        {
+            if (ckbAddAlter.Checked)
+            {
+                rxtTextoAlternativa.Enabled = false;
+                ckbCorreta.Enabled = false;
+                btnAdicionar.Enabled = false;
+                ckbAddAlter.Checked = false;
+                btnExcluir.Enabled = false;
+                rxtTextoAlternativa.Clear();
+                btnFinalizar.Enabled = false;
+            }
+            else
+            {
+                panAlterar.Enabled = false;
+                btnRemover.Enabled = false;
+                btnCancelar.Enabled = false;
+                panBusca.Enabled = true;
+                dgvAlternativa.Enabled = false;
+                rxtTextoAlternativa.Clear();
+                btnFinalizar.Enabled = false;
+            }
         }
     }
 }

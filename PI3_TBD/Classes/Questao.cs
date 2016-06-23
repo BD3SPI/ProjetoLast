@@ -43,7 +43,7 @@ namespace MVC.Classes
 
             SqlConnection con = Conexao.AbrirConexao();
             SqlCommand cmd = con.CreateCommand();
-            cmd.CommandText = sb.ToString(); 
+            cmd.CommandText = sb.ToString();
             cmd.Parameters.AddWithValue("@TEXTO", SqlDbType.VarChar).Value = this.textoQuestao;
             cmd.Parameters.AddWithValue("@CODASSUNTO", SqlDbType.Int).Value = this.assunto.codigo;
             cmd.Parameters.AddWithValue("@CODTIPOQUESTAO", SqlDbType.Char).Value = this.tipoQuestao.codTipoQuestao;
@@ -258,9 +258,9 @@ namespace MVC.Classes
                 cmd.Parameters.Add("@CODTIPOQUESTAO", SqlDbType.Char).Value = this.tipoQuestao.codTipoQuestao;
                 cmd.Parameters.Add("@ativo", SqlDbType.Char, 1).Value = this.ativo;
                 cmd.Parameters.Add("@DIFICULDADE", SqlDbType.Char, 1).Value = this.dificuldade;
-                
+
                 cmd.ExecuteNonQuery();
-          
+
 
                 con.Close();
 
@@ -337,5 +337,43 @@ namespace MVC.Classes
 
         }
 
+        public static bool verificaDependecia(string codquestao)
+        {
+            string sql = "select count(*) from questaoevento where codquestao =" + codquestao;
+            SqlConnection con = Conexao.AbrirConexao();
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandText = sql;
+            //SqlDataReader rd = cmd.ExecuteReader();
+            Int32 codigo = 0;
+            codigo = (Int32)cmd.ExecuteScalar();
+            bool verifica;
+            if (codigo > 0)
+
+                verifica = true;
+
+            else
+                verifica = false;
+
+            return verifica;
+        }
+        public static void Excluir(string codquestao)
+        {
+            try
+            {
+                string sql1 = "DELETE FROM alternativa where codquestao =" + codquestao ;
+                string sql = "DELETE FROM questao where codquestao =" + codquestao;
+                SqlConnection con = Conexao.AbrirConexao();
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandText = sql1+sql;
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (ArgumentException)
+            {
+                MessageBox.Show("Falha na exclusão");
+            }
+
+
+        }
     }
 }

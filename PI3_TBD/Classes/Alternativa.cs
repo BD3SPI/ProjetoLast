@@ -200,6 +200,25 @@ namespace MVC.Classes
             }
         }
 
+        public static void Excluir(string codalternativa)
+        {
 
+            try
+            {
+                 
+                string sql = "DELETE FROM alternativa where codalternativa =" + codalternativa;
+                SqlConnection con = Conexao.AbrirConexao();
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandText =   sql;
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (ArgumentException)
+            {
+                MessageBox.Show("Falha na exclusão");
+            }
+        }
     }
 }
+
+
