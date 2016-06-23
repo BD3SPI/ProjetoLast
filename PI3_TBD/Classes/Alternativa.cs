@@ -91,15 +91,19 @@ namespace MVC.Classes
             this.contador = 3;
         }
 
-        public static int novoIdAlternativas(string ultimoId)
+        public static Int32 novoIdAlternativas(string codquestao)
         {
-            string sql = "select max(codalternativa) from alternativa where codquestao  =" + ultimoId;
+            string sql = "select count(codalternativa) from alternativa where codquestao  =" + codquestao;
             SqlConnection con = Conexao.AbrirConexao();
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandText = sql;
-            SqlDataReader rd = cmd.ExecuteReader();
-            int codigo;
-            codigo = rd.GetInt32(0);
+            //SqlDataReader rd = cmd.ExecuteReader();
+            Int32 codigo = 0;
+
+
+            codigo = (Int32)cmd.ExecuteScalar();
+
+
 
             return codigo;
 

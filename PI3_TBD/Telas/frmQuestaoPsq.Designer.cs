@@ -291,6 +291,7 @@
             this.txtquestao.Size = new System.Drawing.Size(375, 40);
             this.txtquestao.TabIndex = 87;
             this.txtquestao.Text = "";
+            this.txtquestao.Visible = false;
             // 
             // dgvAlternativa
             // 
@@ -361,6 +362,7 @@
             this.label12.Size = new System.Drawing.Size(63, 24);
             this.label12.TabIndex = 68;
             this.label12.Text = "Texto:";
+            this.label12.Visible = false;
             // 
             // ckbCorreta
             // 
@@ -468,12 +470,14 @@
             // 
             // txtAlternativa
             // 
+            this.txtAlternativa.Enabled = false;
             this.txtAlternativa.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAlternativa.Location = new System.Drawing.Point(350, 5);
             this.txtAlternativa.Name = "txtAlternativa";
             this.txtAlternativa.Size = new System.Drawing.Size(45, 40);
             this.txtAlternativa.TabIndex = 91;
             this.txtAlternativa.Text = "";
+            this.txtAlternativa.Visible = false;
             // 
             // frmQuestaoPsq
             // 

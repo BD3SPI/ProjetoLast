@@ -161,6 +161,27 @@ namespace MVC.Telas
             ckbCorreta.Checked = false;
             txtAlternativa.Clear();
             this.dgvAlternativa.DataSource = null;
+
+            if (ckbAddAlter.Checked)
+            {
+                rxtTextoAlternativa.Enabled = false;
+                ckbCorreta.Enabled = false;
+                btnAdicionar.Enabled = false;
+                ckbAddAlter.Checked = false;
+                btnExcluir.Enabled = false;
+                rxtTextoAlternativa.Clear();
+                btnFinalizar.Enabled = false;
+            }
+            else
+            {
+                panAlterar.Enabled = false;
+                btnRemover.Enabled = false;
+                btnCancelar.Enabled = false;
+                panBusca.Enabled = true;
+                dgvAlternativa.Enabled = false;
+                rxtTextoAlternativa.Clear();
+                btnFinalizar.Enabled = false;
+            }
         }
 
         private void llbImagem_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -198,6 +219,11 @@ namespace MVC.Telas
                 {
                     alt.insertTpAlternativas2();
                     MessageBox.Show("Alternativa Adicionada");
+                    rxtTextoAlternativa.Clear();
+                    ckbCorreta.Checked = false;
+                    Alternativa a = new Alternativa();
+                    a.PreencherDataGridAlternativa(dgvAlternativa, txtAlternativa.Text);
+                    dgvAlternativa.Columns[1].Visible = false;
                 }
             }
             if (cmbTpQuestao.SelectedValue.Equals("T"))
@@ -215,6 +241,11 @@ namespace MVC.Telas
                 }
                 alt.insertTpAlternativas2();
                 MessageBox.Show("Alternativa Adicionada");
+                rxtTextoAlternativa.Clear();
+                ckbCorreta.Checked = false;
+                Alternativa a = new Alternativa();
+                a.PreencherDataGridAlternativa(dgvAlternativa, txtAlternativa.Text);
+                dgvAlternativa.Columns[1].Visible = false;
             }
 
         }
