@@ -214,6 +214,50 @@ namespace MVC.Telas
                 btnCadastrarimagem.Visible = false;
                 Imagem.imagem = null;
             }
+            Alternativa alt = new Alternativa();
+            int codalternativa = Alternativa.novoIdAlternativas(txtAlternativa.Text);
+            codalternativa++;
+            if (cmbTpQuestao.SelectedValue.Equals("A"))
+            {
+                alt.codigo = codalternativa.ToString();
+                alt.texto = rxtTextoAlternativa.Text;
+                alt.codquestao = txtAlternativa.Text;
+                if (ckbCorreta.Checked == true)
+                {
+                    alt.correta = 1;
+                }
+                else
+                {
+                    alt.correta = 0;
+                }
+                if (alt.ValidarAlternativaCorreta(alt.codquestao) >= 1 && ckbCorreta.Checked == true)
+                {
+                    MessageBox.Show("Já possui alternativa correta");
+                    //throw new JaPossuiAlternativacorretaException();
+                }
+                else
+                {
+                    alt.insertTpAlternativas2();
+                    MessageBox.Show("Alternativa Adicionada");
+                }
+            }
+            if (cmbTpQuestao.SelectedValue.Equals("T"))
+            {
+                alt.codigo = codalternativa.ToString();
+                alt.texto = rxtTextoAlternativa.Text;
+                alt.codquestao = txtAlternativa.Text;
+                if (ckbCorreta.Checked == true)
+                {
+                    alt.correta = 1;
+                }
+                else
+                {
+                    alt.correta = 0;
+                }
+                alt.insertTpAlternativas2();
+                MessageBox.Show("Alternativa Adicionada");
+            }
+
             
         }
 
