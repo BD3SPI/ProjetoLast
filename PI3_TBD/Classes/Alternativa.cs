@@ -91,7 +91,7 @@ namespace MVC.Classes
             this.contador = 3;
         }
 
-        public int novoIdAlternativas(string ultimoId)
+        public static int novoIdAlternativas(string ultimoId)
         {
             string sql = "select max(codalternativa) from alternativa where codquestao  =" + ultimoId;
             SqlConnection con = Conexao.AbrirConexao();
@@ -206,5 +206,23 @@ namespace MVC.Classes
 
 
         }
+        public void insertTpAlternativas2()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("INSERT INTO alternativa(codquestao,codalternativa,textoalternativa,correta) VALUES(@codquestao,@codalternativa,@textoalternativa,@correta)");
+
+            SqlConnection con = Conexao.AbrirConexao();
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandText = sb.ToString();
+            cmd.Parameters.AddWithValue("@codquestao", SqlDbType.Int).Value = this.codquestao;
+            cmd.Parameters.AddWithValue("@codalternativa", SqlDbType.Int).Value = this.codigo;
+            cmd.Parameters.AddWithValue("@textoalternativa", SqlDbType.VarChar).Value = this.texto;
+            cmd.Parameters.AddWithValue("@correta", SqlDbType.Bit).Value = this.correta;
+
+            cmd.ExecuteNonQuery();
+            con.Close();
+            con.Dispose();
+        }
+
     }
 }
