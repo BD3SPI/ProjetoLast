@@ -219,7 +219,7 @@ namespace MVC.Telas
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            bool verifica = Questao.verificaDependecia(txtAlternativa.Text);
+            bool verifica = Questao.verificaDependecia(txtquestao.Text);
 
             if (verifica.Equals(true))
             {
@@ -229,7 +229,7 @@ namespace MVC.Telas
             {
                 if (MessageBox.Show("Tem certeza que deseja excluir a questão?", "Confirmação", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    verifica = Questao.verificaDependecia(txtAlternativa.Text);
+                    verifica = Questao.verificaDependecia(txtquestao.Text);
                     if (verifica.Equals(true))
                     {
                         MessageBox.Show("Existem dependentes");
@@ -237,7 +237,7 @@ namespace MVC.Telas
                     }
                     else if (verifica.Equals(false))
                     {
-                        Questao.Excluir(txtAlternativa.Text);
+                        Questao.Excluir(txtquestao.Text);
                         Alternativa a = new Alternativa();
                         Questao q = new Questao();
                         lstQuestao.DataSource = null;

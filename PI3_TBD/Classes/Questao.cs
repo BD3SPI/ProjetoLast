@@ -372,9 +372,26 @@ namespace MVC.Classes
             {
                 MessageBox.Show("Falha na exclusão");
             }
-
-
         }
 
+        public static bool verificaDependecia(string codquestao)
+        {
+            string sql = "select count(*) from questaoevento where codquestao =" + codquestao;
+            SqlConnection con = Conexao.AbrirConexao();
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandText = sql;
+            //SqlDataReader rd = cmd.ExecuteReader();
+            Int32 codigo = 0;
+            codigo = (Int32)cmd.ExecuteScalar();
+            bool verifica;
+            if (codigo > 0)
+
+                verifica = true;
+
+            else
+                verifica = false;
+
+            return verifica;
+        }
     }
 }
