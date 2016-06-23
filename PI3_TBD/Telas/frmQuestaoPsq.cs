@@ -206,10 +206,13 @@ namespace MVC.Telas
                 q.Alterarimagem(txtAlternativa);
                 imgadicionada = true;
                 MessageBox.Show("Foto cadastrada com sucesso");
+                btnCadastrarimagem.Enabled = false;
+                btnCadastrarimagem.Visible = false;
             }else{
                 MessageBox.Show("Imagem não selecionada");
                 btnCadastrarimagem.Enabled = false;
                 btnCadastrarimagem.Visible = false;
+                Imagem.imagem = null;
             }
             
         }
