@@ -61,6 +61,7 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.ckbAddAlter = new System.Windows.Forms.CheckBox();
             this.btnFinalizar = new System.Windows.Forms.Button();
+            this.txtAlternativa = new System.Windows.Forms.RichTextBox();
             this.panBusca.SuspendLayout();
             this.panAlterar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlternativa)).BeginInit();
@@ -105,7 +106,6 @@
             // btnExcluir
             // 
             this.btnExcluir.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnExcluir.Enabled = false;
             this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExcluir.Image = ((System.Drawing.Image)(resources.GetObject("btnExcluir.Image")));
             this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -466,12 +466,22 @@
             this.btnFinalizar.UseVisualStyleBackColor = true;
             this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
             // 
+            // txtAlternativa
+            // 
+            this.txtAlternativa.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAlternativa.Location = new System.Drawing.Point(350, 5);
+            this.txtAlternativa.Name = "txtAlternativa";
+            this.txtAlternativa.Size = new System.Drawing.Size(45, 40);
+            this.txtAlternativa.TabIndex = 91;
+            this.txtAlternativa.Text = "";
+            // 
             // frmQuestaoPsq
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1093, 610);
+            this.Controls.Add(this.txtAlternativa);
             this.Controls.Add(this.btnFinalizar);
             this.Controls.Add(this.ckbAddAlter);
             this.Controls.Add(this.btnCancelar);
@@ -536,5 +546,6 @@
         private System.Windows.Forms.Button btnFinalizar;
         private System.Windows.Forms.RichTextBox txtquestao;
         private System.Windows.Forms.Button btnCadastrarimagem;
+        private System.Windows.Forms.RichTextBox txtAlternativa;
     }
 }

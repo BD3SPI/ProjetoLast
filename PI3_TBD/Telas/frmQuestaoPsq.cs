@@ -14,7 +14,7 @@ namespace MVC.Telas
 {
     public partial class frmQuestaoPsq : Form
     {
-        string txtAlternativa;
+      
         bool imgadicionada = false;
         public frmQuestaoPsq()
         {
@@ -55,15 +55,15 @@ namespace MVC.Telas
         private void lstQuestao_Click(object sender, EventArgs e)
         {
            
-                txtAlternativa = lstQuestao.SelectedValue.ToString();
-                txtquestao.Text = lstQuestao.SelectedItem.ToString();
+                txtAlternativa.Text = lstQuestao.SelectedValue.ToString();
+                txtAlternativa.Text = lstQuestao.SelectedItem.ToString();
                 Alternativa a = new Alternativa();
                 //lstAlternativas.DataSource = a.listarAlternativa(txtAlternativa.Text);
                 //lstAlternativas.DisplayMember = "texto";
                 //lstAlternativas.ValueMember = "codigo";
-                a.PreencherDataGridAlternativa(dgvAlternativa, txtAlternativa);
+                a.PreencherDataGridAlternativa(dgvAlternativa, txtAlternativa.Text);
                 dgvAlternativa.Columns[1].Visible = false;
-                txtAlternativa = lstQuestao.SelectedValue.ToString();
+                txtAlternativa.Text = lstQuestao.SelectedValue.ToString();
                 // exibi a imagem, relacionada com a questão.
                 pictureBox1.Image = null;
 
@@ -159,7 +159,7 @@ namespace MVC.Telas
             rxtTextoAlternativa.Clear();
             ckbAddAlter.Checked = false;
             ckbCorreta.Checked = false;
-            txtquestao.Clear();
+            txtAlternativa.Clear();
             this.dgvAlternativa.DataSource = null;
         }
 
@@ -174,13 +174,13 @@ namespace MVC.Telas
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
             Alternativa alt = new Alternativa();
-            int codalternativa = Alternativa.novoIdAlternativas(txtquestao.Text);
+            int codalternativa = Alternativa.novoIdAlternativas(txtAlternativa.Text);
             codalternativa++;
             if (cmbTpQuestao.SelectedValue.Equals("A"))
             {
                 alt.codigo = codalternativa.ToString();
                 alt.texto = rxtTextoAlternativa.Text;
-                alt.codquestao = txtquestao.Text;
+                alt.codquestao = txtAlternativa.Text;
                 if (ckbCorreta.Checked == true)
                 {
                     alt.correta = 1;
@@ -204,7 +204,7 @@ namespace MVC.Telas
             {
                 alt.codigo = codalternativa.ToString();
                 alt.texto = rxtTextoAlternativa.Text;
-                alt.codquestao = txtquestao.Text;
+                alt.codquestao = txtAlternativa.Text;
                 if (ckbCorreta.Checked == true)
                 {
                     alt.correta = 1;
@@ -246,7 +246,7 @@ namespace MVC.Telas
             {
                 Questao q = new Questao();
 
-                q.Alterarimagem(txtAlternativa);
+                q.Alterarimagem(txtAlternativa.Text);
                 imgadicionada = true;
                 MessageBox.Show("Foto cadastrada com sucesso");
                 btnCadastrarimagem.Enabled = false;
@@ -263,7 +263,7 @@ namespace MVC.Telas
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            bool verifica = Questao.verificaDependecia(txtquestao.Text);
+            bool verifica = Questao.verificaDependecia(txtAlternativa.Text);
 
             if (verifica.Equals(true))
             {
@@ -273,7 +273,7 @@ namespace MVC.Telas
             {
                 if (MessageBox.Show("Tem certeza que deseja excluir a questão?", "Confirmação", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    verifica = Questao.verificaDependecia(txtquestao.Text);
+                    verifica = Questao.verificaDependecia(txtAlternativa.Text);
                     if (verifica.Equals(true))
                     {
                         MessageBox.Show("Existem dependentes");
@@ -281,7 +281,7 @@ namespace MVC.Telas
                     }
                     else if (verifica.Equals(false))
                     {
-                        Questao.Excluir(txtquestao.Text);
+                        Questao.Excluir(txtAlternativa.Text);
                         Alternativa a = new Alternativa();
                         Questao q = new Questao();
                         lstQuestao.DataSource = null;
@@ -301,7 +301,7 @@ namespace MVC.Telas
                 string codigo = Convert.ToString(dgvAlternativa.CurrentRow.Cells[1].Value.ToString());
                 Alternativa.Excluir(codigo);
                 Alternativa a = new Alternativa();
-                a.PreencherDataGridAlternativa(dgvAlternativa, txtquestao.Text);
+                a.PreencherDataGridAlternativa(dgvAlternativa, txtAlternativa.Text);
                 dgvAlternativa.Columns[1].Visible = false;
 
 
