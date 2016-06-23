@@ -15,6 +15,7 @@ namespace MVC
     public partial class frmImagem : Form
     {
         public static bool imagemSelecionada = false;
+        public static bool imagemCarregada = false;
         public frmImagem()
         {
             InitializeComponent();
@@ -71,6 +72,7 @@ namespace MVC
                 txtTitulo.Text = "";
                 lblCaminho.Text = "Caminho";
                 MessageBox.Show("Imagem gravada com cod = " + Imagem.codImagem.ToString());
+                imagemCarregada = true;
             }
             
         }

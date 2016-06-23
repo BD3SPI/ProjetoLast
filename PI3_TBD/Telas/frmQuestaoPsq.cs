@@ -15,6 +15,7 @@ namespace MVC.Telas
     public partial class frmQuestaoPsq : Form
     {
         string txtAlternativa;
+        bool imgadicionada = false;
         public frmQuestaoPsq()
         {
             InitializeComponent();
@@ -120,6 +121,10 @@ namespace MVC.Telas
                 panBusca.Enabled = true;
                 dgvAlternativa.Enabled = false;
             }
+            if (!imgadicionada)
+            {
+                Imagem.imagem = null;
+            }
             
         }
 
@@ -163,7 +168,6 @@ namespace MVC.Telas
             frmImagem frimagem = new frmImagem();
             frimagem.ShowDialog();
             btnCadastrarimagem.Visible = true;
-            btnCadastrarimagem.Enabled = true;
 
         }
 
@@ -194,10 +198,20 @@ namespace MVC.Telas
 
         private void btnCadastrarimagem_Click(object sender, EventArgs e)
         {
-            Questao q = new Questao();
 
-            q.Alterarimagem(txtAlternativa);
-            MessageBox.Show("Foto cadastrada com sucesso");
+            if (frmImagem.imagemCarregada)
+            {
+                Questao q = new Questao();
+
+                q.Alterarimagem(txtAlternativa);
+                imgadicionada = true;
+                MessageBox.Show("Foto cadastrada com sucesso");
+            }else{
+                MessageBox.Show("Imagem não selecionada");
+                btnCadastrarimagem.Enabled = false;
+                btnCadastrarimagem.Visible = false;
+            }
+            
         }
     }
 }
