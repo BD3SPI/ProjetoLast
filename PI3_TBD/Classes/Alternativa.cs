@@ -191,11 +191,11 @@ namespace MVC.Classes
         {
             try
             {
-                string sql1 = "DELETE FROM alternativa where codquestao =" + codquestao;
-                string sql = "DELETE FROM questao where codquestao =" + codquestao;
+                string sql1 = "DELETE FROM alternativa where codalternativa =" + codquestao;
+            
                 SqlConnection con = Conexao.AbrirConexao();
                 SqlCommand cmd = con.CreateCommand();
-                cmd.CommandText = sql1 + sql;
+                cmd.CommandText = sql1 ;
 
                 cmd.ExecuteNonQuery();
             }

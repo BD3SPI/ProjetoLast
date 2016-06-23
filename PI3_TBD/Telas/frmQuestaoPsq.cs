@@ -56,7 +56,7 @@ namespace MVC.Telas
         {
            
                 txtAlternativa.Text = lstQuestao.SelectedValue.ToString();
-                txtAlternativa.Text = lstQuestao.SelectedItem.ToString();
+                //txtAlternativa.Text = lstQuestao.SelectedItem.ToString();
                 Alternativa a = new Alternativa();
                 //lstAlternativas.DataSource = a.listarAlternativa(txtAlternativa.Text);
                 //lstAlternativas.DisplayMember = "texto";
@@ -303,7 +303,7 @@ namespace MVC.Telas
                 Alternativa a = new Alternativa();
                 a.PreencherDataGridAlternativa(dgvAlternativa, txtAlternativa.Text);
                 dgvAlternativa.Columns[1].Visible = false;
-
+                txtAlternativa.Clear();
 
             }
         }
