@@ -219,7 +219,35 @@ namespace MVC.Telas
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
+            bool verifica = Questao.verificaDependecia(txtAlternativa.Text);
 
+            if (verifica.Equals(true))
+            {
+                MessageBox.Show("Impossível apagar, essa questão está associada um evento !!! ", "Aviso ");
+            }
+            else
+            {
+                if (MessageBox.Show("Tem certeza que deseja excluir a questão?", "Confirmação", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    verifica = Questao.verificaDependecia(txtAlternativa.Text);
+                    if (verifica.Equals(true))
+                    {
+                        MessageBox.Show("Existem dependentes");
+
+                    }
+                    else if (verifica.Equals(false))
+                    {
+                        Questao.Excluir(txtAlternativa.Text);
+                        Alternativa a = new Alternativa();
+                        Questao q = new Questao();
+                        lstQuestao.DataSource = null;
+                        lstQuestao.Items.Clear();
+                        dgvAlternativa.DataSource = null;
+                        dgvAlternativa.Rows.Clear();
+                    }
+
+                }
+            }
         }
     }
 }
