@@ -257,7 +257,7 @@ namespace MVC.Telas
                 string codigo = Convert.ToString(dgvAlternativa.CurrentRow.Cells[1].Value.ToString());
                 Alternativa.Excluir(codigo);
                 Alternativa a = new Alternativa();
-                a.PreencherDataGridAlternativa(dgvAlternativa, txtAlternativa.Text);
+                a.PreencherDataGridAlternativa(dgvAlternativa, txtquestao.Text);
                 dgvAlternativa.Columns[1].Visible = false;
 
 

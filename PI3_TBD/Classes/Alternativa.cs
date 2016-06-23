@@ -57,7 +57,7 @@ namespace MVC.Classes
 
             dr.Close();
             dr.Dispose();
-        } 
+        }
 
         public void insereVouF()
         {
@@ -81,7 +81,7 @@ namespace MVC.Classes
             catch (Exception)
             {
                 MessageBox.Show("Já há uma alternativa correta para esta questão. Por gentileza, verifique as alternativas cadastradas");
-            
+
             }
         }
 
@@ -187,6 +187,24 @@ namespace MVC.Classes
             }
         }
 
+        public static void Excluir(string codquestao)
+        {
+            try
+            {
+                string sql1 = "DELETE FROM alternativa where codquestao =" + codquestao;
+                string sql = "DELETE FROM questao where codquestao =" + codquestao;
+                SqlConnection con = Conexao.AbrirConexao();
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandText = sql1 + sql;
 
+                cmd.ExecuteNonQuery();
+            }
+            catch (ArgumentException)
+            {
+                MessageBox.Show("Falha na exclusão");
+            }
+
+
+        }
     }
 }
