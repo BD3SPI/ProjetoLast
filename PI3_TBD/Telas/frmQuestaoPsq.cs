@@ -249,5 +249,19 @@ namespace MVC.Telas
                 }
             }
         }
+
+        private void btnRemover_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Tem certeza que deseja excluir a Alternativa?", "Confirmação", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                string codigo = Convert.ToString(dgvAlternativa.CurrentRow.Cells[1].Value.ToString());
+                Alternativa.Excluir(codigo);
+                Alternativa a = new Alternativa();
+                a.PreencherDataGridAlternativa(dgvAlternativa, txtAlternativa.Text);
+                dgvAlternativa.Columns[1].Visible = false;
+
+
+            }
+        }
     }
 }
