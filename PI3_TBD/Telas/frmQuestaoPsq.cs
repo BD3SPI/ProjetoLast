@@ -263,5 +263,29 @@ namespace MVC.Telas
 
             }
         }
+
+        private void btnFinalizar_Click(object sender, EventArgs e)
+        {
+            if (ckbAddAlter.Checked)
+            {
+                rxtTextoAlternativa.Enabled = false;
+                ckbCorreta.Enabled = false;
+                btnAdicionar.Enabled = false;
+                ckbAddAlter.Checked = false;
+                btnExcluir.Enabled = false;
+                rxtTextoAlternativa.Clear();
+                btnFinalizar.Enabled = false;
+            }
+            else
+            {
+                panAlterar.Enabled = false;
+                btnRemover.Enabled = false;
+                btnCancelar.Enabled = false;
+                panBusca.Enabled = true;
+                dgvAlternativa.Enabled = false;
+                rxtTextoAlternativa.Clear();
+                btnFinalizar.Enabled = false;
+            }
+        }
     }
 }
