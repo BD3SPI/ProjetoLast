@@ -503,7 +503,7 @@
             this.MinimizeBox = false;
             this.Name = "frmQuestaoPsq";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmQuestaoPsq";
+            this.Text = "Pesquisa de questão";
             this.Load += new System.EventHandler(this.frmQuestaoPsq_Load);
             this.panBusca.ResumeLayout(false);
             this.panBusca.PerformLayout();

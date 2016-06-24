@@ -213,8 +213,8 @@ namespace MVC.Classes
         }
         public void insertTpAlternativas2()
         {
-            try
-            {
+            //try
+            //{
                 StringBuilder sb = new StringBuilder();
                 sb.AppendLine("INSERT INTO alternativa(codquestao,codalternativa,textoalternativa,correta) VALUES(@codquestao,@codalternativa,@textoalternativa,@correta)");
 
@@ -229,8 +229,8 @@ namespace MVC.Classes
                 cmd.ExecuteNonQuery();
                 con.Close();
                 con.Dispose();
-            }
-            catch (Exception) { MessageBox.Show("Erro"); }
+            //}
+            //catch (Exception) { MessageBox.Show("Erro"); }
         }
 
     }
