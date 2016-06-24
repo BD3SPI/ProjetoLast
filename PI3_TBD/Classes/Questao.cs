@@ -376,7 +376,7 @@ namespace MVC.Classes
 
         public static bool verificaDependecia(string codquestao)
         {
-            string sql = "select count(*) from questaoevento where codquestao =" + codquestao;
+            string sql = "select * from questaoevento where codquestao =" + codquestao;
             SqlConnection con = Conexao.AbrirConexao();
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandText = sql;
