@@ -313,6 +313,7 @@ namespace MVC.Telas
                     else if (verifica.Equals(false))
                     {
                         Questao.Excluir(txtAlternativa.Text);
+                        MessageBox.Show("Questão excluída com sucesso");
                         Alternativa a = new Alternativa();
                         Questao q = new Questao();
                         lstQuestao.DataSource = null;
@@ -330,7 +331,7 @@ namespace MVC.Telas
             if (MessageBox.Show("Tem certeza que deseja excluir a Alternativa?", "Confirmação", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 string codigo = Convert.ToString(dgvAlternativa.CurrentRow.Cells[1].Value.ToString());
-                Alternativa.Excluir(codigo);
+                Alternativa.Excluir(txtAlternativa.Text, codigo);
                 Alternativa a = new Alternativa();
                 a.PreencherDataGridAlternativa(dgvAlternativa, txtAlternativa.Text);
                 dgvAlternativa.Columns[1].Visible = false;

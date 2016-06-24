@@ -380,18 +380,11 @@ namespace MVC.Classes
             SqlConnection con = Conexao.AbrirConexao();
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandText = sql;
-            //SqlDataReader rd = cmd.ExecuteReader();
-            Int32 codigo = 0;
-            codigo = (Int32)cmd.ExecuteScalar();
-            bool verifica;
-            if (codigo > 0)
 
-                verifica = true;
+            SqlDataReader dr = cmd.ExecuteReader();
+            bool valido = dr.HasRows;
 
-            else
-                verifica = false;
-
-            return verifica;
+            return valido;
         }
     }
 }

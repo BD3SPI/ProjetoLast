@@ -191,12 +191,13 @@ namespace MVC.Classes
             }
         }
 
-        public static void Excluir(string codquestao)
+        public static void Excluir(string codquestao, string codAlternativa)
         {
             try
             {
-                string sql1 = "DELETE FROM alternativa where codalternativa =" + codquestao;
-            
+                string sql1 = "DELETE FROM alternativa where codquestao =" + codquestao + "and codAlternativa = "+ codAlternativa;
+
+
                 SqlConnection con = Conexao.AbrirConexao();
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandText = sql1 ;
@@ -212,20 +213,24 @@ namespace MVC.Classes
         }
         public void insertTpAlternativas2()
         {
-            StringBuilder sb = new StringBuilder();
-            sb.AppendLine("INSERT INTO alternativa(codquestao,codalternativa,textoalternativa,correta) VALUES(@codquestao,@codalternativa,@textoalternativa,@correta)");
+            try
+            {
+                StringBuilder sb = new StringBuilder();
+                sb.AppendLine("INSERT INTO alternativa(codquestao,codalternativa,textoalternativa,correta) VALUES(@codquestao,@codalternativa,@textoalternativa,@correta)");
 
-            SqlConnection con = Conexao.AbrirConexao();
-            SqlCommand cmd = con.CreateCommand();
-            cmd.CommandText = sb.ToString();
-            cmd.Parameters.AddWithValue("@codquestao", SqlDbType.Int).Value = this.codquestao;
-            cmd.Parameters.AddWithValue("@codalternativa", SqlDbType.Int).Value = this.codigo;
-            cmd.Parameters.AddWithValue("@textoalternativa", SqlDbType.VarChar).Value = this.texto;
-            cmd.Parameters.AddWithValue("@correta", SqlDbType.Bit).Value = this.correta;
+                SqlConnection con = Conexao.AbrirConexao();
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandText = sb.ToString();
+                cmd.Parameters.AddWithValue("@codquestao", SqlDbType.Int).Value = this.codquestao;
+                cmd.Parameters.AddWithValue("@codalternativa", SqlDbType.Int).Value = this.codigo;
+                cmd.Parameters.AddWithValue("@textoalternativa", SqlDbType.VarChar).Value = this.texto;
+                cmd.Parameters.AddWithValue("@correta", SqlDbType.Bit).Value = this.correta;
 
-            cmd.ExecuteNonQuery();
-            con.Close();
-            con.Dispose();
+                cmd.ExecuteNonQuery();
+                con.Close();
+                con.Dispose();
+            }
+            catch (Exception) { MessageBox.Show("Erro"); }
         }
 
     }
