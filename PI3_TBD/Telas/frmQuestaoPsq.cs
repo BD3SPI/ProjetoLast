@@ -335,7 +335,7 @@ namespace MVC.Telas
                 Alternativa a = new Alternativa();
                 a.PreencherDataGridAlternativa(dgvAlternativa, txtAlternativa.Text);
                 dgvAlternativa.Columns[1].Visible = false;
-                txtAlternativa.Clear();
+                //txtAlternativa.Clear();
 
             }
         }
