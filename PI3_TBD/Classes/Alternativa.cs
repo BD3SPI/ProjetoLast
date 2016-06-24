@@ -139,7 +139,7 @@ namespace MVC.Classes
 
 
                     var dataTable = new DataTable();
-                    using (var reader = comm.ExecuteReader())
+                    using (  var reader = comm.ExecuteReader())
                     {
 
                         dataTable.Load(reader);

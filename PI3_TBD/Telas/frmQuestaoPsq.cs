@@ -194,29 +194,57 @@ namespace MVC.Telas
 
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
-            Alternativa alt = new Alternativa();
-            int codalternativa  = Alternativa.novoIdAlternativas(txtAlternativa.Text);
-            codalternativa++;
-            if (cmbTpQuestao.SelectedValue.Equals("A"))
+            try
             {
-                alt.codigo = codalternativa.ToString();
-                alt.texto = rxtTextoAlternativa.Text;
-                alt.codquestao = txtAlternativa.Text;
-                if (ckbCorreta.Checked == true)
+                Alternativa alt = new Alternativa();
+                int codalternativa = Alternativa.novoIdAlternativas(txtAlternativa.Text);
+                codalternativa++;
+                if (cmbTpQuestao.SelectedValue.Equals("A"))
                 {
-                    alt.correta = 1;
+                    alt.codigo = codalternativa.ToString();
+                    alt.texto = rxtTextoAlternativa.Text;
+                    alt.codquestao = txtAlternativa.Text;
+                    if (ckbCorreta.Checked == true)
+                    {
+                        alt.correta = 1;
+                    }
+                    else
+                    {
+                        alt.correta = 0;
+                    }
+                    if (alt.ValidarAlternativaCorreta(alt.codquestao) >= 1 && ckbCorreta.Checked == true)
+                    {
+                        MessageBox.Show("Já possui alternativa correta");
+                        //throw new JaPossuiAlternativacorretaException();
+                    }
+                    if (rxtTextoAlternativa.Text == "")
+                    {
+                        MessageBox.Show("Por favor entre com a alternativa");
+                    }
+                    else
+                    {
+                        alt.insertTpAlternativas2();
+                        MessageBox.Show("Alternativa Adicionada");
+                        rxtTextoAlternativa.Clear();
+                        ckbCorreta.Checked = false;
+                        Alternativa a = new Alternativa();
+                        a.PreencherDataGridAlternativa(dgvAlternativa, txtAlternativa.Text);
+                        dgvAlternativa.Columns[1].Visible = false;
+                    }
                 }
-                else
+                if (cmbTpQuestao.SelectedValue.Equals("T"))
                 {
-                    alt.correta = 0;
-                }
-                if (alt.ValidarAlternativaCorreta(alt.codquestao) >= 1 && ckbCorreta.Checked == true)
-                {
-                    MessageBox.Show("Já possui alternativa correta");
-                    //throw new JaPossuiAlternativacorretaException();
-                }
-                else
-                {
+                    alt.codigo = codalternativa.ToString();
+                    alt.texto = rxtTextoAlternativa.Text;
+                    alt.codquestao = txtAlternativa.Text;
+                    if (ckbCorreta.Checked == true)
+                    {
+                        alt.correta = 1;
+                    }
+                    else
+                    {
+                        alt.correta = 0;
+                    }
                     alt.insertTpAlternativas2();
                     MessageBox.Show("Alternativa Adicionada");
                     rxtTextoAlternativa.Clear();
@@ -226,26 +254,11 @@ namespace MVC.Telas
                     dgvAlternativa.Columns[1].Visible = false;
                 }
             }
-            if (cmbTpQuestao.SelectedValue.Equals("T"))
+
+            catch (Exception)
             {
-                alt.codigo = codalternativa.ToString();
-                alt.texto = rxtTextoAlternativa.Text;
-                alt.codquestao = txtAlternativa.Text;
-                if (ckbCorreta.Checked == true)
-                {
-                    alt.correta = 1;
-                }
-                else
-                {
-                    alt.correta = 0;
-                }
-                alt.insertTpAlternativas2();
-                MessageBox.Show("Alternativa Adicionada");
-                rxtTextoAlternativa.Clear();
-                ckbCorreta.Checked = false;
-                Alternativa a = new Alternativa();
-                a.PreencherDataGridAlternativa(dgvAlternativa, txtAlternativa.Text);
-                dgvAlternativa.Columns[1].Visible = false;
+
+                MessageBox.Show("Erro");
             }
 
         }
@@ -298,7 +311,12 @@ namespace MVC.Telas
 
             if (verifica.Equals(true))
             {
-                MessageBox.Show("Impossível apagar, essa questão está associada um evento !!! ", "Aviso ");
+                MessageBox.Show("Impossível apagar, essa questão está associada á um evento !!! ", "Aviso ");
+                if (MessageBox.Show("Deseja inativar essa questão?", "Confirmação", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    Questao.Inativarquestao(txtAlternativa.Text);
+                    MessageBox.Show("Questão inativada");
+                }
             }
             else
             {

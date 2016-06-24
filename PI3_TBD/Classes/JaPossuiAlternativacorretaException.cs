@@ -9,4 +9,10 @@ namespace MVC.Classes
     class JaPossuiAlternativacorretaException : Exception
     {
     }
+
+    class PreencherocampoException : Exception
+    {
+
+
+    }
 }

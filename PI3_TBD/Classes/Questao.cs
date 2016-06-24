@@ -386,5 +386,25 @@ namespace MVC.Classes
 
             return valido;
         }
+
+        public static void Inativarquestao(string id)
+        {
+            try
+            {
+                SqlConnection cn = Conexao.AbrirConexao();
+                SqlCommand cmd = cn.CreateCommand();
+                cmd.CommandText = "UPDATE QUESTAO SET ATIVO = 0 WHERE CODQUESTAO = " + id;
+                cmd.ExecuteNonQuery();
+
+                cn.Close();
+                cn.Dispose();
+            }
+            catch (FormatException)
+            {
+
+            }
+
+
+        }
     }
 }

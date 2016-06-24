@@ -119,6 +119,10 @@ namespace MVC.Telas
         {
             try
             {
+                if (txtAlternativa.Text == "")
+                {
+                    throw new PreencherocampoException();
+                }
                 int bit = 0;
                 if (contadorCorretas > 0)
                 {
@@ -191,10 +195,17 @@ namespace MVC.Telas
                 }
             }
 
-              catch (JaPossuiAlternativacorretaException)
+            catch (JaPossuiAlternativacorretaException)
             {
                 MessageBox.Show("Já existe uma alternativa correta vinculada para essa questão");
                 ckCorreta.Checked = false;
+            }
+
+            catch (PreencherocampoException)
+
+            {
+                MessageBox.Show("Por favor entre com o texto da Alternativa!", "Aviso");
+
             }
 
            

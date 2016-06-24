@@ -288,7 +288,7 @@
             this.txtquestao.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtquestao.Location = new System.Drawing.Point(139, 3);
             this.txtquestao.Name = "txtquestao";
-            this.txtquestao.Size = new System.Drawing.Size(375, 40);
+            this.txtquestao.Size = new System.Drawing.Size(412, 40);
             this.txtquestao.TabIndex = 87;
             this.txtquestao.Text = "";
             this.txtquestao.Visible = false;
@@ -298,7 +298,7 @@
             this.dgvAlternativa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAlternativa.Location = new System.Drawing.Point(139, 290);
             this.dgvAlternativa.Name = "dgvAlternativa";
-            this.dgvAlternativa.Size = new System.Drawing.Size(375, 120);
+            this.dgvAlternativa.Size = new System.Drawing.Size(412, 120);
             this.dgvAlternativa.TabIndex = 86;
             // 
             // llbImagem
@@ -337,7 +337,7 @@
             // 
             this.pictureBox1.Location = new System.Drawing.Point(139, 49);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(375, 235);
+            this.pictureBox1.Size = new System.Drawing.Size(412, 235);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 76;
             this.pictureBox1.TabStop = false;
@@ -382,7 +382,7 @@
             this.rxtTextoAlternativa.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rxtTextoAlternativa.Location = new System.Drawing.Point(652, 468);
             this.rxtTextoAlternativa.Name = "rxtTextoAlternativa";
-            this.rxtTextoAlternativa.Size = new System.Drawing.Size(375, 50);
+            this.rxtTextoAlternativa.Size = new System.Drawing.Size(412, 50);
             this.rxtTextoAlternativa.TabIndex = 86;
             this.rxtTextoAlternativa.Text = "";
             // 
