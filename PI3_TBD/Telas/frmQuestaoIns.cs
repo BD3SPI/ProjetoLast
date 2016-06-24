@@ -88,7 +88,7 @@ namespace MVC.Telas
             }
                catch (Exception)
             {
-                MessageBox.Show("Erro");
+                MessageBox.Show("Por favor entre com todos os dados para o cadastro");
             }
             
         }
