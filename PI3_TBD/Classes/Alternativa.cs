@@ -93,15 +93,15 @@ namespace MVC.Classes
 
         public static Int32 novoIdAlternativas(string codquestao)
         {
-            string sql = "select count(codalternativa) from alternativa where codquestao  =" + codquestao;
+            string sql = "select max(codalternativa) from alternativa where codquestao  =" + codquestao;
             SqlConnection con = Conexao.AbrirConexao();
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandText = sql;
             //SqlDataReader rd = cmd.ExecuteReader();
-            Int32 codigo = 0;
+            int codigo = 0;
 
 
-            codigo = (Int32)cmd.ExecuteScalar();
+            codigo = Convert.ToInt32(cmd.ExecuteScalar());
 
 
 
@@ -207,6 +207,12 @@ namespace MVC.Classes
             catch (ArgumentException)
             {
                 MessageBox.Show("Falha na exclusão");
+            }
+
+            catch (Exception)
+            {
+                MessageBox.Show("Erro não especificado");
+
             }
 
 

@@ -195,7 +195,7 @@ namespace MVC.Telas
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
             Alternativa alt = new Alternativa();
-            int codalternativa = Alternativa.novoIdAlternativas(txtAlternativa.Text);
+            int codalternativa  = Alternativa.novoIdAlternativas(txtAlternativa.Text);
             codalternativa++;
             if (cmbTpQuestao.SelectedValue.Equals("A"))
             {
